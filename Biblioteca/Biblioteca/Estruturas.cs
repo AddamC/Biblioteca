@@ -14,5 +14,23 @@ namespace Biblioteca
         {
             fazerParede(0, 100, 0, 0, 0, 100);
         }
+
+        public void fazerRecepcao() //pular distancia do jardim
+        {
+
+        }
+        public void fazerSaguao() //pular distancia do jardim
+        {
+
+        }
+        public void fazerTV()
+        {
+
+        }
+
+        public void fazerFotografia()
+        {
+
+        }
     }
 }
