@@ -24,8 +24,8 @@ namespace Biblioteca
         float camera_rotation = 0;                     //rotação no eixo Z
         float camera_rotation2 = 0;
         float valor = 0f;
-        
-        Paredes construcao = new Paredes();
+        Estruturas estrutura = new Estruturas();
+
 
         public Form1()
         {
@@ -98,8 +98,10 @@ namespace Biblioteca
             //construcao.paredeBuraco(0, 200, 0, 500, 0, 500, 50, 150, 0, 50, 0, 100);
 
             //GL.Color3(Color.Gray);
-            construcao.paredeBuraco(0, 300, 0, 300, 0, 100,
-                                    100,200,80,220,50,70);
+            //construcao.paredeBuraco(0, 300, 0, 300, 0, 100,
+            //                        100, 200, 80, 220, 50, 70);
+
+            estrutura.fazerAuditorio();
 
             //construcao.paredeBuraco(0, 300, 0, 0, 0, 300,
             //                        100, 200, 0, 0, 80, 220);
