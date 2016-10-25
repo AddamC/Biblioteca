@@ -34,7 +34,7 @@
             // glControl1
             // 
             this.glControl1.BackColor = System.Drawing.Color.Black;
-            this.glControl1.Location = new System.Drawing.Point(55, 47);
+            this.glControl1.Location = new System.Drawing.Point(63, 23);
             this.glControl1.Name = "glControl1";
             this.glControl1.Size = new System.Drawing.Size(771, 421);
             this.glControl1.TabIndex = 0;
