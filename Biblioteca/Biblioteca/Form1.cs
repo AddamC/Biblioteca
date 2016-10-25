@@ -24,8 +24,8 @@ namespace Biblioteca
         float camera_rotation = 0;                     //rotação no eixo Z
         float camera_rotation2 = 0;
         float valor = 0f;
-        
-        Paredes construcao = new Paredes();
+        Estruturas estrutura = new Estruturas();
+
 
         public Form1()
         {
@@ -92,14 +92,16 @@ namespace Biblioteca
             GL.Vertex3(-80, 50, 50);
             GL.End();
 
-            construcao.fazerParede(0, 100, 0, 0, 0, 100);
-            construcao.fazerParede(0, 100, 0, 200, 0, 0);
+            //construcao.fazerParede(0, 100, 0, 0, 0, 100);
+            //construcao.fazerParede(0, 100, 0, 200, 0, 0);
             //construcao.fazerChao2(100, 100, 0, 500, 0, 500);
             //construcao.paredeBuraco(0, 200, 0, 500, 0, 500, 50, 150, 0, 50, 0, 100);
 
             //GL.Color3(Color.Gray);
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 100,
-            //                        100,200,80,220,50,70);
+            //                        100, 200, 80, 220, 50, 70);
+
+            estrutura.fazerAuditorio();
 
             //construcao.paredeBuraco(0, 300, 0, 0, 0, 300,
             //                        100, 200, 0, 0, 80, 220);
@@ -277,8 +279,8 @@ namespace Biblioteca
 
         private void glControl1_Resize(object sender, EventArgs e)
         {
-            glControl1.Width = Form1.ActiveForm.Width - 10;
-            glControl1.Height = Form1.ActiveForm.Height - 10;
+            //glControl1.Width = Form1.ActiveForm.Width - 10;
+            //glControl1.Height = Form1.ActiveForm.Height - 10;
             SetupViewport();
             glControl1.Invalidate();
         }

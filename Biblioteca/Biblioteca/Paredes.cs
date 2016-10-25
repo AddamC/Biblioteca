@@ -13,7 +13,7 @@ using OpenTK.Graphics.OpenGL;
 
 namespace Biblioteca
 {
-    class Paredes
+    public abstract class Paredes
     {
         public void fazerParede(float hi, float hf, float xi,
                                  float xf, float yi, float yf)
