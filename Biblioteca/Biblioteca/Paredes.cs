@@ -18,7 +18,7 @@ namespace Biblioteca
         public void fazerParede(float hi, float hf, float xi,
                                  float comprX, float yi, float yf)
         {
-            GL.Color3(Color.Gray);
+            //GL.Color3(Color.Gray);
 
             GL.Begin(PrimitiveType.Quads);
             GL.Vertex3(xi, yi, hi);
@@ -73,6 +73,7 @@ namespace Biblioteca
                                  float buracoXi, float buracoXf,
                                  float buracoYi, float buracoYf)
         {
+
 
             GL.Begin(PrimitiveType.Quads);
 
