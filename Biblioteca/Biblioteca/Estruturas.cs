@@ -12,12 +12,12 @@ namespace Biblioteca
 
         public void fazerAuditorio()
         {
-            fazerParede(0, 100, 0, 0, 0, 100);
+            
         }
 
         public void fazerRecepcao() //pular distancia do jardim
         {
-
+            fazerParede(0, 100, 0, 645, 0);
         }
         public void fazerSaguao() //pular distancia do jardim
         {
