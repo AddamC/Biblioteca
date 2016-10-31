@@ -103,6 +103,8 @@ namespace Biblioteca
 
             estrutura.fazerAuditorio();
             estrutura.fazerRecepcao();
+            estrutura.fazerBanheiros();
+            estrutura.fazerFotografia();
 
             //construcao.paredeBuraco(0, 300, 0, 0, 0, 300,
             //                        100, 200, 0, 0, 80, 220);
@@ -284,6 +286,11 @@ namespace Biblioteca
             //glControl1.Height = Form1.ActiveForm.Height - 10;
             SetupViewport();
             glControl1.Invalidate();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
