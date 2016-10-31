@@ -34,13 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
-      <HintPath>..\..\..\..\OpenTk\1.1\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenTK.Compatibility">
-      <HintPath>..\..\..\..\..\OneDrive\Documentos\OpenTK\1.1\Binaries\OpenTK\Release\OpenTK.Compatibility.dll</HintPath>
+      <HintPath>..\..\..\..\..\OpenTK\1.1\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
     </Reference>
     <Reference Include="OpenTK.GLControl">
-      <HintPath>..\..\..\..\OpenTk\1.1\Binaries\OpenTK\Release\OpenTK.GLControl.dll</HintPath>
+      <HintPath>..\..\..\..\..\OpenTK\1.1\Binaries\OpenTK\Release\OpenTK.GLControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
