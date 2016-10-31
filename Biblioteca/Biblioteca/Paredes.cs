@@ -74,6 +74,7 @@ namespace Biblioteca
                                  float buracoYi, float buracoYf)
         {
 
+
             GL.Begin(PrimitiveType.Quads);
 
             GL.Vertex3(xi, yi, hi);

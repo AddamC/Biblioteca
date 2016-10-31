@@ -101,10 +101,10 @@ namespace Biblioteca
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 100,
             //                        100, 200, 80, 220, 50, 70);
 
-            estrutura.fazerAuditorio();
+            //estrutura.fazerAuditorio();
             estrutura.fazerRecepcao();
-            estrutura.fazerBanheiros();
-            estrutura.fazerFotografia();
+            estrutura.fazerSaguao();
+            //estrutura.fazerFotografia();
 
             //construcao.paredeBuraco(0, 300, 0, 0, 0, 300,
             //                        100, 200, 0, 0, 80, 220);
@@ -126,7 +126,7 @@ namespace Biblioteca
             int w = glControl1.Width; //largura da janela
             int h = glControl1.Height; //altura da janela
 
-            Matrix4 projection = Matrix4.CreatePerspectiveFieldOfView(1f, w / (float)h, 0.1f, 10000.0f);
+            Matrix4 projection = Matrix4.CreatePerspectiveFieldOfView(1f, w / (float)h, 0.1f, 30000.0f);
             GL.LoadIdentity(); //zera a matriz de projeção com a matriz identidade
 
             GL.MatrixMode(MatrixMode.Projection);

@@ -37,7 +37,7 @@
       <HintPath>..\..\..\..\OpenTk\1.1\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
     </Reference>
     <Reference Include="OpenTK.Compatibility">
-      <HintPath>..\..\..\..\OpenTk\1.1\Binaries\OpenTK\Release\OpenTK.Compatibility.dll</HintPath>
+      <HintPath>..\..\..\..\..\OneDrive\Documentos\OpenTK\1.1\Binaries\OpenTK\Release\OpenTK.Compatibility.dll</HintPath>
     </Reference>
     <Reference Include="OpenTK.GLControl">
       <HintPath>..\..\..\..\OpenTk\1.1\Binaries\OpenTK\Release\OpenTK.GLControl.dll</HintPath>
