@@ -62,7 +62,11 @@ namespace Biblioteca
         }
         public void fazerSaguao() //pular distancia do jardim
         {
-
+            fazerParede(0, 100, 2230, 1680, 0);
+            fazerParede(0, 100, 3910, 0, 0, 1680);
+            fazerParede(0, 100, 2230, 1680, 1680);
+            fazerParede(0, 100, 2230, 0, 0, 550);
+            fazerParede(0, 100, 2230, 0, 1100, 580);
         }
         public void fazerTV()
         {
