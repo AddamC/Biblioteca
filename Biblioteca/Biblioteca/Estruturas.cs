@@ -38,27 +38,27 @@ namespace Biblioteca
 
             GL.Color3(Color.Blue);
             paredeBuraco(0, altura, 0, 1683, 0, 0, 0, 270, 1179, recepCompr - 435, 0, 0);
-            //GL.Color3(Color.Gray);
-            //fazerParede(0, altura, 0, 0, 0, -recepLarg);
-            //fazerParede(0, altura, recepCompr, 0, 0, -recepLarg);
-            //GL.Color3(Color.Red);
-            //fazerParede(0, altura, recepCompr - 435, 0, 0, -largBanheiro);
-            //fazerParede(0, altura, recepCompr - 435, 0, -100 - largBanheiro2, -650 - largBanheiro);
-            //GL.Color3(Color.Green);
-            //fazerParede(0, altura, recepCompr - 435, 435, -100 - largBanheiro2, 0);
+            GL.Color3(Color.Gray);
+            fazerParede(0, altura, 0, 0, 0, -recepLarg);
+            fazerParede(0, altura, recepCompr, 0, 0, -recepLarg);
+            GL.Color3(Color.Red);
+            fazerParede(0, altura, recepCompr - 435, 0, 0, -largBanheiro);
+            fazerParede(0, altura, recepCompr - 435, 0, -100 - largBanheiro2, -650 - largBanheiro);
+            GL.Color3(Color.Green);
+            fazerParede(0, altura, recepCompr - 435, 435, -100 - largBanheiro2, 0);
 
-            //GL.Color3(Color.Gray);
-            //fazerParede(0, altura, recepCompr - 315, 0, -100, -largBanheiro2);
-            //fazerParede(0, altura, recepCompr - 315, 0, -800, -largBanheiro2);
+            GL.Color3(Color.Gray);
+            fazerParede(0, altura, recepCompr - 315, 0, -100, -largBanheiro2);
+            fazerParede(0, altura, recepCompr - 315, 0, -800, -largBanheiro2);
 
-            //paredeBuraco(0, 300, 50, 0, 0, -1000,  //DA ERRO QUANDO VARIA NO EIXO X
-            //             0, 270, 50, 0, -500, -700);
+            paredeBuraco(0, 300, 50, 0, 0, -1000,  //DA ERRO QUANDO VARIA NO EIXO X
+                         0, 270, 50, 0, -500, -700);
 
-            //paredeBuraco(0, 300, 0, 0, 0, -1000,  //DA ERRO QUANDO VARIA NO EIXO X
-            //             0, 270, 0, 0, -500, -700);
+            paredeBuraco(0, 300, 0, 0, 0, -1000,  //DA ERRO QUANDO VARIA NO EIXO X
+                         0, 270, 0, 0, -500, -700);
 
             GL.Color3(Color.Blue);
-            //paredeBuraco(0, 300, 1400, 0, 0, -277, 0, 270, recepCompr, 0, -300, -300);
+            paredeBuraco(0, 300, 1400, 0, 0, -277, 0, 270, recepCompr, 0, -300, -300);
         }
         public void fazerSaguao() //pular distancia do jardim
         {
