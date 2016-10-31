@@ -75,17 +75,25 @@ namespace Biblioteca
         {
 
 
-            GL.Begin(PrimitiveType.Quads);
+            //GL.Begin(PrimitiveType.Quads);
 
-            GL.Vertex3(xi, yi, hi);
-            GL.Vertex3(xi, yi, buracoHi);
-            GL.Vertex3(xi + comprX, yi + yf, buracoHi);
-            GL.Vertex3(xi + comprX, yi + yf, hi);
+            //GL.Vertex3(xi, yi, hi);
+            //GL.Vertex3(xi, yi, hf);
+            //GL.Vertex3(xi + comprX, yi + yf, hf);
+            //GL.Vertex3(xi + comprX, yi + yf, hi);
 
-            GL.Vertex3(xi, yi, buracoHf);
-            GL.Vertex3(xi, yi, hf);
-            GL.Vertex3(xi + comprX, yi + yf, hf);
-            GL.Vertex3(xi + comprX, yi + yf, buracoHf);
+            fazerParede(hi, buracoHi, xi, comprX, yi, yf);
+            fazerParede(buracoHf, hf, xi, comprX, yi, yf);
+
+            //GL.Vertex3(xi, yi, hi);
+            //GL.Vertex3(xi, yi, buracoHi);
+            //GL.Vertex3(xi + comprX, yi + yf, buracoHi);
+            //GL.Vertex3(xi + comprX, yi + yf, hi);
+
+            //GL.Vertex3(xi, yi, buracoHf);
+            //GL.Vertex3(xi, yi, hf);
+            //GL.Vertex3(xi + comprX, yi + yf, hf);
+            //GL.Vertex3(xi + comprX, yi + yf, buracoHf);
 
             if (xi != comprX) //cria na diagonal
             {
@@ -94,17 +102,20 @@ namespace Biblioteca
 
             }
 
-            GL.Vertex3(xi, yi, buracoHi);
-            GL.Vertex3(xi, yi, buracoHf);
-            GL.Vertex3(xi + buracoXi, yi + buracoYi, buracoHf);
-            GL.Vertex3(xi + buracoXi, yi + buracoYi, buracoHi);
+            fazerParede(buracoHi, buracoHf, xi, buracoXi, yi, buracoYi);
+            fazerParede(buracoHi, buracoHf, buracoXf, buracoXi, buracoYf, yf-buracoYf);
 
-            GL.Vertex3(buracoXf, buracoYf, buracoHi);
-            GL.Vertex3(buracoXf, buracoYf, buracoHf);
-            GL.Vertex3(comprX, yf, buracoHf);
-            GL.Vertex3(comprX, yf, buracoHi);
+            //GL.Vertex3(xi, yi, buracoHi);
+            //GL.Vertex3(xi, yi, buracoHf);
+            //GL.Vertex3(xi + buracoXi, yi + buracoYi, buracoHf);
+            //GL.Vertex3(xi + buracoXi, yi + buracoYi, buracoHi);
 
-            GL.End();
+            //GL.Vertex3(buracoXf, buracoYf, buracoHi);
+            //GL.Vertex3(buracoXf, buracoYf, buracoHf);
+            //GL.Vertex3(comprX, yf, buracoHf);
+            //GL.Vertex3(comprX, yf, buracoHi);
+
+            //GL.End();
         }
 
         public void fazerEscada(int deg, float altura, float hf, float xi,

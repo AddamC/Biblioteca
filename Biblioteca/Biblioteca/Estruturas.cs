@@ -19,7 +19,7 @@ namespace Biblioteca
         float portaBanheiro2 = 130;
         float porta = 130;
 
-        float recepCompr = 1683;
+        float recepCompr = 1680;
         float recepLarg = 2230;
         float altura = 300;
         float largBanheiro = 277;
@@ -48,8 +48,20 @@ namespace Biblioteca
         {
 
             GL.Color3(Color.DarkSeaGreen);
-            paredeBuraco(0, altura, 0, 0, 0, 1683,
-                         0, 270, 0, 0, 1179, recepCompr - 435);
+            paredeBuraco(0, altura, 0, 0, 0, recepCompr,
+                         0, 270, 0, 0, 801, recepCompr - 435);
+
+            //fazerParede(270,300,0,0,0,recepCompr);
+            //fazerParede(0, 270, 0, 0, 0, 801);
+            //fazerParede(0, 270, 0, 0, recepCompr - 435, 435); 1245, 1680 - comprBuraco
+
+            GL.Color4(0f, 0f, 0f, 0.6f);
+            fazerParede(260, 270, 0, 0, 801, 445);
+            fazerParede(0, 270, 0, 0, 801, 80);
+            fazerParede(0, 270, 0, 0,1246-80,80); //1436 = buracoYf
+            //paredeBuraco(0, 270, 0, 0, 801, 435,
+            //             0, 260, 0, 0, 850, 435+50);
+
             GL.Color3(Color.Gray);
             fazerParede(0, altura, 0, recepLarg, 0, 0);
 
@@ -59,12 +71,14 @@ namespace Biblioteca
             fazerParede(0, altura, portaBanheiro + largBanheiro2, largBanheiro - portaBanheiro, recepCompr - 435, 0);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2 + porta, largSalaTec - porta, recepCompr - 560, 0); //sala tecnica
             fazerParede(0, altura, 0, 550 - porta, 534, 0);
+            fazerParede(0, 100, 550 + porta, 550 - porta, 534, 0); //balcao
 
             GL.Color3(Color.DarkGoldenrod);
             fazerParede(0, altura, portaBanheiro + largBanheiro2, 0, recepCompr - 435, 435);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2, 0, recepCompr - 560, 560);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2 + largSalaTec, 0, recepCompr - 560, 560 - porta);
             fazerParede(0, altura, 550, 0, 0, 534);
+            fazerParede(0, 100, 1100, 0, 534, 550);
 
             GL.Color3(Color.DarkSlateBlue);
             fazerParede(0, altura, portaBanheiro, largBanheiro2, recepCompr - 315, 0); //banheiro 1
