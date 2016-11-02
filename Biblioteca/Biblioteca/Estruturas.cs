@@ -34,14 +34,58 @@ namespace Biblioteca
         int comprimentoEstudio = 320;
         int larguraEstudio = 185;
 
+        //var Anfiteatro
+        int largAnfiteatro = 1150;
+        int compAnfiteatro = 1882;
+        int portaAnfiteadro = 210;
+        int portAltura = 210;
+        //
+
         //var TV
         int distRecepTV = 550;
         int tamMaiorTV = 1125;
         int tamMenorTV = 590;
         int tamProd = 550;
 
-        public void fazerAuditorio()
+        public void fazerAuditorio()//pular distancia corredor
         {
+            GL.Color3(Color.SlateBlue);
+            //parede + porta superior          
+            fazerParede(0, altura, -1725, largAnfiteatro-661, 3032);//esquerda da porta
+            fazerParede(270, altura, -1725, largAnfiteatro-471, 3032);//porta
+            fazerParede(0, altura, -1046, largAnfiteatro-679, 3032);//direita da porta
+            //
+            GL.Color3(Color.PowderBlue);
+            fazerParede(0, altura, -1725, largAnfiteatro, 1882);//inferior
+            fazerParede(0, altura, -1725, 0, compAnfiteatro, 1150);//esquerda
+
+            //parede interior traseira
+           
+            GL.Color3(Color.Black);
+            //fazerParede(0, altura, -1325, -400, compAnfiteatro, 400);//teste de reta
+            //GL.Color3(Color.Yellow);//teste
+            fazerParede(0, altura, -1725, 140, compAnfiteatro + 400, -140);//esquerda
+            fazerParede(0, altura, -1325, -140, compAnfiteatro, 140);
+
+            /*/telhado Anfiteatro
+            fazerChao(altura, altura, -1725, largAnfiteatro, 1882, largAnfiteatro);
+            /*/
+
+            GL.Color3(Color.Turquoise);
+            //parede + porta direita
+            fazerParede(0, altura, -575, 0, compAnfiteatro, 255);//esquerda da porta
+            fazerParede(270, altura, -575 , 0, compAnfiteatro+255, 160); //porta
+            fazerParede(0, altura, -575, 0, compAnfiteatro+415, 735);//direita da porta
+            //
+            //degraus
+            GL.Color3(Color.Black);
+            fazerEscada(1, 10, -20, -675, 100, 2680, 30);
+            fazerEscada(1, 10, -20, -1000, 100, 3002, 30);
+            //
+            GL.Color3(Color.Red);
+            fazerChao(0, 0, -1725, largAnfiteatro, 1882,largAnfiteatro);
+
+
         }
 
         public void fazerRecepcao() //pular distancia do jardim
