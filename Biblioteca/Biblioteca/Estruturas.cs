@@ -35,8 +35,8 @@ namespace Biblioteca
         int larguraEstudio = 185;
 
         //var Anfiteatro
-        int largAnfiteatro = 1150;
-        int compAnfiteatro = 1882;
+        int largAnfiteatro = 1100;
+        int compAnfiteatro = 1940;
         int portaAnfiteadro = 210;
         int portAltura = 210;
         //
@@ -51,21 +51,21 @@ namespace Biblioteca
         {
             GL.Color3(Color.SlateBlue);
             //parede + porta superior          
-            fazerParede(0, altura, -1725, largAnfiteatro-661, 3032);//esquerda da porta
-            fazerParede(270, altura, -1725, largAnfiteatro-471, 3032);//porta
-            fazerParede(0, altura, -1046, largAnfiteatro-679, 3032);//direita da porta
+            fazerParede(0, altura, -2225, largAnfiteatro-661, 3090);//esquerda da porta
+            fazerParede(270, altura, -2225, largAnfiteatro-201, 3090);//porta
+            fazerParede(0, altura, -1546, largAnfiteatro-679, 3090);//direita da porta
             //
             GL.Color3(Color.PowderBlue);
-            fazerParede(0, altura, -1725, largAnfiteatro, 1882);//inferior
-            fazerParede(0, altura, -1725, 0, compAnfiteatro, 1150);//esquerda
+            fazerParede(0, altura, -2225, largAnfiteatro, 1940);//inferior
+            fazerParede(0, altura, -2225, 0, compAnfiteatro, 1150);//esquerda
 
             //parede interior traseira
            
             GL.Color3(Color.Black);
             //fazerParede(0, altura, -1325, -400, compAnfiteatro, 400);//teste de reta
             //GL.Color3(Color.Yellow);//teste
-            fazerParede(0, altura, -1725, 140, compAnfiteatro + 400, -140);//esquerda
-            fazerParede(0, altura, -1325, -140, compAnfiteatro, 140);
+            fazerParede(0, altura, -2225, 140, compAnfiteatro + 400, -140);//esquerda
+            fazerParede(0, altura, -1825, -140, compAnfiteatro, 140);
 
             /*/telhado Anfiteatro
             fazerChao(altura, altura, -1725, largAnfiteatro, 1882, largAnfiteatro);
@@ -73,17 +73,17 @@ namespace Biblioteca
 
             GL.Color3(Color.Turquoise);
             //parede + porta direita
-            fazerParede(0, altura, -575, 0, compAnfiteatro, 255);//esquerda da porta
-            fazerParede(270, altura, -575 , 0, compAnfiteatro+255, 160); //porta
-            fazerParede(0, altura, -575, 0, compAnfiteatro+415, 735);//direita da porta
+            fazerParede(0, altura, -1125, 0, compAnfiteatro, 255);//esquerda da porta
+            fazerParede(270, altura, -1125 , 0, compAnfiteatro+255, 160); //porta
+            fazerParede(0, altura, -1125, 0, compAnfiteatro+415, 735);//direita da porta
             //
             //degraus
             GL.Color3(Color.Black);
-            fazerEscada(1, 10, -20, -675, 100, 2680, 30);
-            fazerEscada(1, 10, -20, -1000, 100, 3002, 30);
+            fazerEscada(1, 10, -20, -1225, 100, 2680, 30);
+            fazerEscada(1, 10, -20, -1575, 100, 3002, 30);
             //
             GL.Color3(Color.Red);
-            fazerChao(0, 0, -1725, largAnfiteatro, 1882,largAnfiteatro);
+            fazerChao(0, 0, -2225, largAnfiteatro, 1940,largAnfiteatro+50);
 
 
         }

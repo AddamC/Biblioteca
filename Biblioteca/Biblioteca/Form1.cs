@@ -101,7 +101,7 @@ namespace Biblioteca
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 100,
             //                        100, 200, 80, 220, 50, 70);
 
-            //estrutura.fazerAuditorio();
+            estrutura.fazerAuditorio();
             estrutura.fazerRecepcao();
             estrutura.fazerFotografia();
             estrutura.fazerSaguao();
