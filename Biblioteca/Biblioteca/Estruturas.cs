@@ -156,12 +156,12 @@ namespace Biblioteca
             //         (hi,     hf,  xi,  xf, yi,   if)
             fazerParede(0, altura, -distRecepTV, 0, 800, tamMenorTV);//parede leste
 
-            //parede norte
+            //parede sul
             fazerParede(0, 270, -distRecepTV, -45, 800);
             fazerParede(0, 270, -distRecepTV - 145, -tamMaiorTV - tamProd + 145, 800);
-            fazerParede(270, altura, -distRecepTV, -tamMaiorTV, 800);//parte superior norte
+            fazerParede(270, altura, -distRecepTV, -tamMaiorTV, 800);//parte superior sul
             GL.Color3(Color.Magenta);
-            fazerParede(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0); //superior norte sala producao
+            fazerParede(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0); //superior sul sala producao
 
 
             //chao
@@ -171,10 +171,26 @@ namespace Biblioteca
             fazerParede(0, altura, -distRecepTV - tamMaiorTV, 0, 800, 385);//parede interior curta
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800, tamMenorTV);//parede oeste
             GL.Color3(Color.Gray);
-            fazerParede(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV); //parede sul
+            fazerParede(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV); //parede norte tv
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, -tamProd + 100, 800 + tamMenorTV);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -165);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, 0, 800 + tamMenorTV, -165);
+
+
+
+            GL.Color3(Color.BlueViolet);
+            fazerParede(0, altura, -distRecepTV - 575, -425, 800 + tamMenorTV + 120);
+            fazerParede(0, altura, -distRecepTV - tamMaiorTV, -275, 800 + tamMenorTV + 120);
+            fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800+tamMenorTV,550);
+
+            fazerParede(0, altura, -distRecepTV - 575, 0, 800 + tamMenorTV + 120, 550 - 120);
+            fazerParede(0, altura, -distRecepTV - 575, -550, 800 + tamMenorTV + 550);
+
+            fazerParede(0, altura, -distRecepTV - 575 - 550, 0, 800 + tamMenorTV + 550, -550 + 120);
+
+            fazerParede(0, altura, -distRecepTV - 575 - 550, -tamProd, 800 + tamMenorTV+ 550 );
+
+
         }
 
         public void fazerFotografia()
