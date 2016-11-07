@@ -47,6 +47,21 @@ namespace Biblioteca
         int tamMenorTV = 590;
         int tamProd = 550;
 
+
+
+        public void fazerEntrada()
+        {
+            GL.Color3(Color.DimGray);
+            fazerParede(0, altura, -850, 850, 534);
+
+            
+            fazerParede(270, altura, -850,0, 640, 160);//porta
+            fazerParede(0, altura, -850, 0, 534, 125);//direita da porta
+
+            GL.Color3(Color.Red);
+            fazerChao(0, 0, -850, 850, 534, 266 );
+
+        }
         public void fazerAuditorio()//pular distancia corredor
         {
             GL.Color3(Color.SlateBlue);
@@ -197,29 +212,46 @@ namespace Biblioteca
         public void fazerFotografia()
         {
             GL.Color3(Color.Red);
-            fazerParede(0, alturaFotografia, 1350, comprimentoEstudioFotografia, 2945);
-            fazerParede(0, alturaFotografia, 1350, -400, 2945);
-            fazerParede(0, alturaFotografia, 1350, comprimentoEstudioFotografia, 1880);
-            fazerParede(0, alturaFotografia, 1350, -400, 1880);
+            fazerParede(0, alturaFotografia, 950, comprimentoEstudioFotografia, 2945);
+            fazerParede(0, alturaFotografia, 950, -400, 2945);
+            fazerParede(0, alturaFotografia, 950, comprimentoEstudioFotografia, 1880);
+            fazerParede(0, alturaFotografia, 950, -400, 1880);
             GL.Color3(Color.Blue);
             fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia - 100);
-            fazerParede(0, alturaFotografia, 1350 + comprimentoEstudioFotografia, 0, 1880, larguraEstudioFotografia);
+            fazerParede(0, alturaFotografia, 950 + comprimentoEstudioFotografia, 0, 1880, larguraEstudioFotografia);
 
             // Parede com Buraco
             GL.Color3(Color.Yellow);
 
-            fazerParede(0, altura, 1350, 0, 1980, larguraEstudioFotografia-100);
+            fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia-100);
 
             //Estudio//
             GL.Color3(Color.Green);
-            fazerParede(0, alturaFotografia, 1150, 130, 2040);
-            fazerParede(0, altura, 1150, 0 , 2040, 320);
-            fazerParede(0, altura, 1150, 200, 2360);
+            fazerParede(0, alturaFotografia, 750, 130, 2040);
+            fazerParede(0, altura, 750, 0 , 2040, 320);
+            fazerParede(0, altura, 750, 200, 2360);
             //Chão // 
-            GL.Color3(Color.Purple);
-            fazerChao(0, 0, 1350, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
-            GL.Color3(Color.Pink);
-            fazerChao(0 , 0 , 950 , comprimentoEstudioFotografia , 1350 , larguraEstudioFotografia);
+            GL.Color3(Color.Gray);
+            fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
         }
+
+        public void FazerChaoComodos()
+        {
+            //Recepção
+            GL.Color3(Color.Gray);
+            fazerChao2(0, 0, 2230, 200, 570, 540);
+            fazerChao2(0, 0, 0, recepLarg, 0, 1680);
+            //Jardim 
+            GL.Color3(Color.Green);
+            fazerChao2(0, 0, 1350, 1080, 1680, 200);
+            fazerChao2(0, 0, 2230, 200 , 1680 ,-570);
+            fazerChao2(0, 0, 2230, 200, 0, 570);
+            //Saguao
+            GL.Color3(Color.Gray);
+            fazerChao2(0, 0, 2430, 1680, 0, 1680);
+
+
+        }
+
     }
 }
