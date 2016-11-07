@@ -61,6 +61,8 @@ namespace Biblioteca
             GL.Color3(Color.Red);
             fazerChao(0, 0, -850, 850, 534, 266 );
 
+            GL.Color3(Color.Green);
+            fazerChao(0, 0, -1000, 1000, -100, 635);
         }
         public void fazerAuditorio()//pular distancia corredor
         {
