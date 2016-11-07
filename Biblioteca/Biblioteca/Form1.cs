@@ -106,6 +106,7 @@ namespace Biblioteca
             estrutura.fazerFotografia();
             estrutura.fazerSaguao();
             estrutura.fazerTV();
+            estrutura.FazerChaoComodos();
 
             //construcao.paredeBuraco(0, 300, 0, 0, 0, 300,
             //                        100, 200, 0, 0, 80, 220);
@@ -266,9 +267,9 @@ namespace Biblioteca
                 if (a < 0) a += 360;
                 if (a > 360) a -= 360;
                 //label2.Text = lateral.ToString();
-                pos.X += (Math.Sin(a * Math.PI / 180) * 10);
-                pos.Y += (Math.Cos(a * Math.PI / 180) * 10);
-                pos.Z += (Math.Sin(camera_rotation2 * Math.PI / 180) * 10) * sinal;
+                pos.X += (Math.Sin(a * Math.PI / 180) * 100);
+                pos.Y += (Math.Cos(a * Math.PI / 180) * 100);
+                pos.Z += (Math.Sin(camera_rotation2 * Math.PI / 180) * 100) * sinal;
                 calcula_direcao();
                 glControl1.Invalidate();
             }
