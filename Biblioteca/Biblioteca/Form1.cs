@@ -107,6 +107,7 @@ namespace Biblioteca
             estrutura.fazerFotografia();
             estrutura.fazerSaguao();
             estrutura.fazerTV();
+            estrutura.FazerChaoComodos();
 
             //construcao.paredeBuraco(0, 300, 0, 0, 0, 300,
             //                        100, 200, 0, 0, 80, 220);
