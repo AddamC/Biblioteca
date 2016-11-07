@@ -26,6 +26,8 @@ namespace Biblioteca
         float valor = 0f;
         Estruturas estrutura = new Estruturas();
 
+        int texPorta;
+
 
         public Form1()
         {
@@ -38,7 +40,7 @@ namespace Biblioteca
             GL.Enable(EnableCap.Light0);
 
             //texTelhado = LoadTexture("../../textura/telhado.jpg");
-            //texPorta = LoadTexture("../../textura/portajanela.jpg");
+            texPorta = LoadTexture("../../Recursos/portaFEMA.png");
             //texGrama = LoadTexture("../../textura/grama.jpg");
             SetupViewport();                      //configura a janela de pintura
 
@@ -91,15 +93,17 @@ namespace Biblioteca
             GL.Vertex3(-80, 100, 50);
             GL.Vertex3(-80, 50, 50);
             GL.End();
+            
 
-            //construcao.fazerParede(0, 100, 0, 0, 0, 100);
-            //construcao.fazerParede(0, 100, 0, 200, 0, 0);
-            //construcao.fazerChao2(100, 100, 0, 500, 0, 500);
-            //construcao.paredeBuraco(0, 200, 0, 500, 0, 500, 50, 150, 0, 50, 0, 100);
-
-            //GL.Color3(Color.Gray);
-            //construcao.paredeBuraco(0, 300, 0, 300, 0, 100,
-            //                        100, 200, 80, 220, 50, 70);
+            //GL.Enable(EnableCap.Texture2D);
+            //GL.BindTexture(TextureTarget.Texture2D, texPorta);
+            //GL.Color3(Color.Transparent);
+            //GL.Begin(PrimitiveType.Quads);
+            //GL.TexCoord2(213f / 819f, 57f / 460f); GL.Vertex3(100, 0, 140);
+            //GL.TexCoord2(463f / 819f, 57f / 460f); GL.Vertex3(250, 0, 140);
+            //GL.TexCoord2(213f / 819f, 412f / 460f); GL.Vertex3(250, 0, 60);
+            //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
+            //GL.End();
 
             estrutura.fazerAuditorio();
             estrutura.fazerRecepcao();
@@ -107,9 +111,7 @@ namespace Biblioteca
             estrutura.fazerSaguao();
             estrutura.fazerTV();
 
-            //construcao.paredeBuraco(0, 300, 0, 0, 0, 300,
-            //                        100, 200, 0, 0, 80, 220);
-
+            
 
             GL.Color3(Color.BlueViolet);
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 0,
@@ -266,9 +268,9 @@ namespace Biblioteca
                 if (a < 0) a += 360;
                 if (a > 360) a -= 360;
                 //label2.Text = lateral.ToString();
-                pos.X += (Math.Sin(a * Math.PI / 180) * 10);
-                pos.Y += (Math.Cos(a * Math.PI / 180) * 10);
-                pos.Z += (Math.Sin(camera_rotation2 * Math.PI / 180) * 10) * sinal;
+                pos.X += (Math.Sin(a * Math.PI / 180) * 100);
+                pos.Y += (Math.Cos(a * Math.PI / 180) * 100);
+                pos.Z += (Math.Sin(camera_rotation2 * Math.PI / 180) * 100) * sinal;
                 calcula_direcao();
                 glControl1.Invalidate();
             }
@@ -288,7 +290,5 @@ namespace Biblioteca
             SetupViewport();
             glControl1.Invalidate();
         }
-
-        
     }
 }

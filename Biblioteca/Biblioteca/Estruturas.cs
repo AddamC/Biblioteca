@@ -116,13 +116,14 @@ namespace Biblioteca
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2 + porta, largSalaTec - porta, recepCompr - 560, 0); //sala tecnica
             fazerParede(0, altura, 0, 550 - porta, 534, 0);
             fazerParede(0, 100, 550 + porta, 550 - porta, 534, 0); //balcao
+            fazerParede(0, 300, 1365, 600, 534, 0); //parede depois do balcao no meio da recepção
 
             GL.Color3(Color.DarkGoldenrod);
             fazerParede(0, altura, portaBanheiro + largBanheiro2, 0, recepCompr - 435, 435);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2, 0, recepCompr - 560, 560);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2 + largSalaTec, 0, recepCompr - 560, 560 - porta);
             fazerParede(0, altura, 550, 0, 0, 534);
-            fazerParede(0, 100, 1100, 0, 534, 550);
+            fazerParede(0, 100, 1100, 0, 534, 550); //balcao
 
             GL.Color3(Color.DarkSlateBlue);
             fazerParede(0, altura, portaBanheiro, largBanheiro2, recepCompr - 315, 0); //banheiro 1
