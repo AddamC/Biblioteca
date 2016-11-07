@@ -47,6 +47,21 @@ namespace Biblioteca
         int tamMenorTV = 590;
         int tamProd = 550;
 
+
+
+        public void fazerEntrada()
+        {
+            GL.Color3(Color.DimGray);
+            fazerParede(0, altura, -850, 850, 534);
+
+            
+            fazerParede(270, altura, -850,0, 640, 160);//porta
+            fazerParede(0, altura, -850, 0, 534, 125);//direita da porta
+
+            GL.Color3(Color.Red);
+            fazerChao(0, 0, -850, 850, 534, 266 );
+
+        }
         public void fazerAuditorio()//pular distancia corredor
         {
             GL.Color3(Color.SlateBlue);
