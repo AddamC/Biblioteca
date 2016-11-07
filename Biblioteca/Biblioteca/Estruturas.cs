@@ -232,23 +232,27 @@ namespace Biblioteca
             fazerParede(0, altura, 750, 200, 2360);
             //Chão // 
             GL.Color3(Color.Gray);
-            fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
+
         }
 
         public void FazerChaoComodos()
         {
             //Recepção
-            GL.Color3(Color.Gray);
+            GL.Color3(Color.LightGray);
             fazerChao2(0, 0, 2230, 200, 570, 540);
             fazerChao2(0, 0, 0, recepLarg, 0, 1680);
             //Jardim 
             GL.Color3(Color.Green);
+            fazerChao2(0, 0, 0, 850, 0, -100);
             fazerChao2(0, 0, 1350, 1080, 1680, 200);
             fazerChao2(0, 0, 2230, 200 , 1680 ,-570);
             fazerChao2(0, 0, 2230, 200, 0, 570);
             //Saguao
-            GL.Color3(Color.Gray);
+            GL.Color3(Color.LightGray);
             fazerChao2(0, 0, 2430, 1680, 0, 1680);
+            //Fotografia
+            GL.Color3(Color.LightGray);
+            fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
 
 
         }
