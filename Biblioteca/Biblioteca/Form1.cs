@@ -27,6 +27,7 @@ namespace Biblioteca
         Estruturas estrutura = new Estruturas();
 
         int texPorta;
+        int texGrama;
 
 
         public Form1()
@@ -39,11 +40,11 @@ namespace Biblioteca
             GL.ClearColor(Color.GhostWhite);         // definindo a cor de limpeza do fundo da tela
             GL.Enable(EnableCap.Light0);
 
+
             //texTelhado = LoadTexture("../../textura/telhado.jpg");
             texPorta = LoadTexture("../../Recursos/portaFEMA.png");
-            //texGrama = LoadTexture("../../textura/grama.jpg");
+            texGrama = LoadTexture("../../Recursos/Grama.jpg");
             SetupViewport();                      //configura a janela de pintura
-
         }
 
         private void glControl1_Paint(object sender, PaintEventArgs e)
@@ -105,13 +106,13 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-            estrutura.fazerEntrada();
-            estrutura.fazerAuditorio();
-            estrutura.fazerRecepcao();
-            estrutura.fazerFotografia();
-            estrutura.fazerSaguao();
-            estrutura.fazerTV();
-            estrutura.FazerChaoComodos();
+            //estrutura.fazerEntrada();
+            //estrutura.fazerAuditorio();
+            //estrutura.fazerRecepcao();
+            //estrutura.fazerFotografia();
+            //estrutura.fazerSaguao();
+            //estrutura.fazerTV();
+            estrutura.FazerChaoComodos(texGrama);
 
             
 

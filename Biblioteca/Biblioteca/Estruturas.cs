@@ -15,6 +15,8 @@ namespace Biblioteca
 {
     public class Estruturas : Paredes
     {
+
+        
         float portaBanheiro = 115;
         float portaBanheiro2 = 130;
         float porta = 130;
@@ -237,18 +239,42 @@ namespace Biblioteca
 
         }
 
-        public void FazerChaoComodos()
+        public void FazerChaoComodos(int texGrama)
         {
             //Recepção
             GL.Color3(Color.LightGray);
             fazerChao2(0, 0, 2230, 200, 570, 540);
             fazerChao2(0, 0, 0, recepLarg, 0, 1680);
-            //Jardim 
+
+            //Jarim parte de baixo
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texGrama);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(2430, 570 , 0);
+            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(2230, 570, 0);
+            GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(2230, 0, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 0, 0);
+            GL.End();
+
+
+            //Jarim 
+            //GL.Color3(Color.Red);
+            //GL.Begin(PrimitiveType.Quads);
+            //GL.TexCoord2(1f , 0f / 310f); GL.Vertex3(100, 100,0);
+            //GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(-100, 100, 0);
+            //GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(-100, -100, 0);
+            //GL.TexCoord2(1f, 1f); GL.Vertex3(100, -100, 0);
+            //GL.End();
+
+            ////Jardim 
+            //GL.Color3(Color.Green);
+            //fazerChao2(0, 0, 1350, 1080, 1680, 200);
+            //fazerChao2(0, 0, 2230, 200 , 1680 ,-570);
+            //fazerChao2(0, 0, 2230, 200, 0, 570);
+            //Jardim Frente
             GL.Color3(Color.Green);
             fazerChao2(0, 0, 0, 850, 0, -100);
-            fazerChao2(0, 0, 1350, 1080, 1680, 200);
-            fazerChao2(0, 0, 2230, 200 , 1680 ,-570);
-            fazerChao2(0, 0, 2230, 200, 0, 570);
             //Saguao
             GL.Color3(Color.LightGray);
             fazerChao2(0, 0, 2430, 1680, 0, 1680);
