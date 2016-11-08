@@ -26,8 +26,10 @@ namespace Biblioteca
         float valor = 0f;
         Estruturas estrutura = new Estruturas();
 
+        //Texturas
         int texPorta;
         int texGrama;
+        int texPiso;
 
 
         public Form1()
@@ -44,6 +46,7 @@ namespace Biblioteca
             //texTelhado = LoadTexture("../../textura/telhado.jpg");
             texPorta = LoadTexture("../../Recursos/portaFEMA.png");
             texGrama = LoadTexture("../../Recursos/Grama.jpg");
+            texPiso = LoadTexture("../../Recursos/Piso.jpg");
             SetupViewport();                      //configura a janela de pintura
         }
 
@@ -112,7 +115,7 @@ namespace Biblioteca
             estrutura.fazerFotografia();
             estrutura.fazerSaguao();
             estrutura.fazerTV();
-            estrutura.FazerChaoComodos(texGrama);
+            estrutura.FazerChaoComodos(texGrama, texPiso);
 
             
 

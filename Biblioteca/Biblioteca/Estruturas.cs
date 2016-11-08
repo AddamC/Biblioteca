@@ -235,14 +235,25 @@ namespace Biblioteca
 
         }
 
-        public void FazerChaoComodos(int texGrama)
+        public void FazerChaoComodos(int texGrama, int texPiso)
         {
             //Recepção
-            GL.Color3(Color.LightGray);
-            fazerChao2(0, 0, 2230, 200, 570, 540);
-            fazerChao2(0, 0, 0, recepLarg, 0, 1680);
+            //GL.Color3(Color.LightGray);
+            //fazerChao2(0, 0, 2230, 200, 570, 540);
+            //fazerChao2(0, 0, 0, recepLarg, 0, 1680);
 
-            //Jarim parte de baixo
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0/568);  GL.Vertex3(2230,1680,0);
+            GL.TexCoord2(0/984, 0 / 568); GL.Vertex3(0, 1680, 0);
+            GL.TexCoord2(0/984, 1f); GL.Vertex3(0, 0, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(2230, 0, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
+            //Jardim parte de baixo
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
@@ -253,7 +264,7 @@ namespace Biblioteca
             GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 0, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
-            //Jarim parte de cima
+            //Jardim parte de cima
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
@@ -264,7 +275,7 @@ namespace Biblioteca
             GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 1110, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
-            //Jarim parte de baixo da fotografia
+            //Jardim parte de baixo da fotografia
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
