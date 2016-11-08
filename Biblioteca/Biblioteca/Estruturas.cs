@@ -236,13 +236,14 @@ namespace Biblioteca
 
         }
 
-        public void FazerChaoComodos(int texGrama, int texPiso)
+        public void FazerChaoComodos(int texGrama, int texPiso, int texPav)
         {
-            //Recepção
+            //Recepção simples
             //GL.Color3(Color.LightGray);
             //fazerChao2(0, 0, 2230, 200, 570, 540);
             //fazerChao2(0, 0, 0, recepLarg, 0, 1680);
-
+            
+            //Recepção c/ textura
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPiso);
             GL.Color3(Color.Transparent);
@@ -265,6 +266,7 @@ namespace Biblioteca
             GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 0, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
+            
             //Jardim parte de cima
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
@@ -276,6 +278,7 @@ namespace Biblioteca
             GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 1110, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
+            
             //Jardim parte de baixo da fotografia
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
@@ -288,7 +291,7 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
-            //Jarim parte de baixo da recepção
+            //Jardim parte de baixo da recepção
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
@@ -300,7 +303,7 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
-            //Jarim parte de baixo da TV
+            //Jardim parte de baixo da TV
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
@@ -312,14 +315,24 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPav);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-850, 850, 0);
+            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-1800, 850, 0);
+            GL.TexCoord2(0/1600, 1f); GL.Vertex3(-1800, 535, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(-850, 535, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
             //Saguao
             GL.Color3(Color.LightGray);
             fazerChao2(0, 0, 2430, 1680, 0, 1680);
             //Fotografia
             GL.Color3(Color.LightGray);
             fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
-
-            GL.Disable(EnableCap.Texture2D);
+            
         }
 
     }

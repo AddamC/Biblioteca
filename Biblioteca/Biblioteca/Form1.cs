@@ -30,6 +30,7 @@ namespace Biblioteca
         int texPorta;
         int texGrama;
         int texPiso;
+        int texPav;
 
 
         public Form1()
@@ -47,6 +48,7 @@ namespace Biblioteca
             texPorta = LoadTexture("../../Recursos/portaFEMA.png");
             texGrama = LoadTexture("../../Recursos/Grama.jpg");
             texPiso = LoadTexture("../../Recursos/Piso.jpg");
+            texPav = LoadTexture("../../Recursos/pavimento.png");
             SetupViewport();                      //configura a janela de pintura
         }
 
@@ -115,7 +117,7 @@ namespace Biblioteca
             estrutura.fazerFotografia();
             estrutura.fazerSaguao();
             estrutura.fazerTV();
-            estrutura.FazerChaoComodos(texGrama, texPiso);
+            estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
             
 
