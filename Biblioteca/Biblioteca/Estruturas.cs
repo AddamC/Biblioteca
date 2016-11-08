@@ -98,7 +98,7 @@ namespace Biblioteca
             fazerEscada(1, 10, -20, -1225, 100, 2680, 30);
             fazerEscada(1, 10, -20, -1575, 100, 3002, 30);
             //
-            GL.Color3(Color.Red);
+            GL.Color3(Color.LightGray);
             fazerChao(0, 0, -2225, largAnfiteatro, 1940,largAnfiteatro+50);
 
 
@@ -161,6 +161,7 @@ namespace Biblioteca
         }
         public void fazerSaguao() //pular distancia do jardim
         {
+            GL.Color3(Color.Gray);
             fazerParede(0, altura, 2430, 1680, 0);
             fazerParede(0, altura, 4110, 0, 0, 1680);
             fazerParede(0, altura, 2430, 1680, 1680);
@@ -213,12 +214,12 @@ namespace Biblioteca
 
         public void fazerFotografia()
         {
-            GL.Color3(Color.Red);
+            GL.Color3(Color.Gray);
             fazerParede(0, altura, 950, comprimentoEstudioFotografia, 2945);
             fazerParede(0, altura, 950, -400, 2945);
             fazerParede(0, altura, 950, comprimentoEstudioFotografia, 1880);
             fazerParede(0, altura, 950, -400, 1880);
-            GL.Color3(Color.Blue);
+            GL.Color3(Color.Gray);
             fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia - 100);
             fazerParede(0, altura, 950 + comprimentoEstudioFotografia, 0, 1880, larguraEstudioFotografia);
 
@@ -258,7 +259,7 @@ namespace Biblioteca
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(2430 , 1680, 0);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(2430, 1680, 0);
             GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(2230, 1680, 0);
             GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(2230, 1110, 0);
             GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 1110, 0);
@@ -276,19 +277,30 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
+            //Jarim parte de baixo da recepção
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texGrama);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(850, 0, 0);
+            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(0, 0, 0);
+            GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(0, -100, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(850, -100, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
 
             //Jarim parte de baixo da TV
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(0 , 535, 0);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(0, 535, 0);
             GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(-1000, 535, 0);
             GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(-1000, -100, 0);
             GL.TexCoord2(1f, 1f); GL.Vertex3(0, -100, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
-            
+
             //Saguao
             GL.Color3(Color.LightGray);
             fazerChao2(0, 0, 2430, 1680, 0, 1680);
