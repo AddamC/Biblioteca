@@ -94,7 +94,7 @@ namespace Biblioteca
             GL.Vertex3(-80, 100, 50);
             GL.Vertex3(-80, 50, 50);
             GL.End();
-            
+
 
             //GL.Enable(EnableCap.Texture2D);
             //GL.BindTexture(TextureTarget.Texture2D, texPorta);
@@ -106,12 +106,12 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-            //estrutura.fazerEntrada();
-            //estrutura.fazerAuditorio();
-            //estrutura.fazerRecepcao();
-            //estrutura.fazerFotografia();
-            //estrutura.fazerSaguao();
-            //estrutura.fazerTV();
+            estrutura.fazerEntrada();
+            estrutura.fazerAuditorio();
+            estrutura.fazerRecepcao();
+            estrutura.fazerFotografia();
+            estrutura.fazerSaguao();
+            estrutura.fazerTV();
             estrutura.FazerChaoComodos(texGrama);
 
             

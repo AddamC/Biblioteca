@@ -62,9 +62,6 @@ namespace Biblioteca
 
             GL.Color3(Color.Red);
             fazerChao(0, 0, -850, 850, 534, 266 );
-
-            GL.Color3(Color.Green);
-            fazerChao(0, 0, -1000, 1000, -100, 635);
         }
         public void fazerAuditorio()//pular distancia corredor
         {
@@ -234,8 +231,6 @@ namespace Biblioteca
             fazerParede(0, alturaFotografia, 750, 130, 2040);
             fazerParede(0, altura, 750, 0 , 2040, 320);
             fazerParede(0, altura, 750, 200, 2360);
-            //Chão // 
-            GL.Color3(Color.Gray);
 
         }
 
@@ -251,30 +246,59 @@ namespace Biblioteca
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(2430, 570 , 0);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(2430, 570, 0);
             GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(2230, 570, 0);
             GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(2230, 0, 0);
             GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 0, 0);
             GL.End();
+            GL.Disable(EnableCap.Texture2D);
+            //Jarim parte de cima
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texGrama);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(2430 , 1680, 0);
+            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(2230, 1680, 0);
+            GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(2230, 1110, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 1110, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+            //Jarim parte de baixo da fotografia
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texGrama);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(2430, 1880, 0);
+            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(1350, 1880, 0);
+            GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(1350, 1680, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 1680, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
 
+            //Jarim parte de baixo da recepção
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texGrama);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(850, 0, 0);
+            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(0, 0, 0);
+            GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(0, -100, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(850, -100, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
 
-            //Jarim 
-            //GL.Color3(Color.Red);
-            //GL.Begin(PrimitiveType.Quads);
-            //GL.TexCoord2(1f , 0f / 310f); GL.Vertex3(100, 100,0);
-            //GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(-100, 100, 0);
-            //GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(-100, -100, 0);
-            //GL.TexCoord2(1f, 1f); GL.Vertex3(100, -100, 0);
-            //GL.End();
-
-            ////Jardim 
-            //GL.Color3(Color.Green);
-            //fazerChao2(0, 0, 1350, 1080, 1680, 200);
-            //fazerChao2(0, 0, 2230, 200 , 1680 ,-570);
-            //fazerChao2(0, 0, 2230, 200, 0, 570);
-            //Jardim Frente
-            GL.Color3(Color.Green);
-            fazerChao2(0, 0, 0, 850, 0, -100);
+            //Jarim parte de baixo da TV
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texGrama);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(0 , 535, 0);
+            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(-1000, 535, 0);
+            GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(-1000, -100, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(0, -100, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+            
             //Saguao
             GL.Color3(Color.LightGray);
             fazerChao2(0, 0, 2430, 1680, 0, 1680);
@@ -282,7 +306,7 @@ namespace Biblioteca
             GL.Color3(Color.LightGray);
             fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
 
-
+            GL.Disable(EnableCap.Texture2D);
         }
 
     }
