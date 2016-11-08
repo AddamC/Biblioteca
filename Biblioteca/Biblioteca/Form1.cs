@@ -94,7 +94,7 @@ namespace Biblioteca
             GL.Vertex3(-80, 100, 50);
             GL.Vertex3(-80, 50, 50);
             GL.End();
-            
+
 
             //GL.Enable(EnableCap.Texture2D);
             //GL.BindTexture(TextureTarget.Texture2D, texPorta);
@@ -106,12 +106,12 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-            //estrutura.fazerEntrada();
-            //estrutura.fazerAuditorio();
-            //estrutura.fazerRecepcao();
-            //estrutura.fazerFotografia();
-            //estrutura.fazerSaguao();
-            //estrutura.fazerTV();
+            estrutura.fazerEntrada();
+            estrutura.fazerAuditorio();
+            estrutura.fazerRecepcao();
+            estrutura.fazerFotografia();
+            estrutura.fazerSaguao();
+            estrutura.fazerTV();
             estrutura.FazerChaoComodos(texGrama);
 
             
@@ -210,15 +210,16 @@ namespace Biblioteca
             int tipoTecla = 0;
             int sinal = 1;
 
-            if (e.KeyCode == Keys.M)
+            if (e.KeyCode == Keys.Q)
             {
                 valor += 10;
-
+                pos.Z += 100;
                 glControl1.Invalidate();
             }
-            if (e.KeyCode == Keys.N)
+            if (e.KeyCode == Keys.E)
             {
                 valor -= 10;
+                pos.Z -= 100;
                 glControl1.Invalidate();
             }
             if (e.KeyCode == Keys.A)
@@ -244,12 +245,12 @@ namespace Biblioteca
                 tipoTecla = 1;
             }
 
-            if (e.KeyCode == Keys.E)
+            if (e.KeyCode == Keys.Right)
             {
                 a += 3;
                 tipoTecla = 2;
             }
-            if (e.KeyCode == Keys.Q)
+            if (e.KeyCode == Keys.Left)
             {
                 a -= 3;
                 tipoTecla = 2;
