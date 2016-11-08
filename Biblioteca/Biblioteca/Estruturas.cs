@@ -23,7 +23,7 @@ namespace Biblioteca
 
         float recepCompr = 1680;
         float recepLarg = 2230;
-        float altura = 300;
+        float altura = 600;
         float largBanheiro = 277;
         float largBanheiro2 = 193;
         float largSalaTec = 550;
@@ -169,7 +169,7 @@ namespace Biblioteca
         }
         public void fazerTV()
         {
-            GL.Color3(Color.Magenta);
+            GL.Color3(Color.DodgerBlue);
             //         (hi,     hf,  xi,  xf, yi,   if)
             fazerParede(0, altura, -distRecepTV, 0, 800, tamMenorTV);//parede leste
 
@@ -177,15 +177,16 @@ namespace Biblioteca
             fazerParede(0, 270, -distRecepTV, -45, 800);
             fazerParede(0, 270, -distRecepTV - 145, -tamMaiorTV - tamProd + 145, 800);
             fazerParede(270, altura, -distRecepTV, -tamMaiorTV, 800);//parte superior sul
-            GL.Color3(Color.Magenta);
+            GL.Color3(Color.DodgerBlue);
             fazerParede(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0); //superior sul sala producao
 
 
             //chao
-            GL.Color3(Color.Maroon);
+            GL.Color3(Color.LawnGreen);
             fazerChao(0, 0, -distRecepTV, -tamMaiorTV, 800, tamMenorTV);
-
+            GL.Color3(Color.LightSteelBlue);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV, 0, 800, 385);//parede interior curta
+            GL.Color3(Color.MediumAquamarine);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800, tamMenorTV);//parede oeste
             GL.Color3(Color.Gray);
             fazerParede(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV); //parede norte tv
@@ -213,13 +214,13 @@ namespace Biblioteca
         public void fazerFotografia()
         {
             GL.Color3(Color.Red);
-            fazerParede(0, alturaFotografia, 950, comprimentoEstudioFotografia, 2945);
-            fazerParede(0, alturaFotografia, 950, -400, 2945);
-            fazerParede(0, alturaFotografia, 950, comprimentoEstudioFotografia, 1880);
-            fazerParede(0, alturaFotografia, 950, -400, 1880);
+            fazerParede(0, altura, 950, comprimentoEstudioFotografia, 2945);
+            fazerParede(0, altura, 950, -400, 2945);
+            fazerParede(0, altura, 950, comprimentoEstudioFotografia, 1880);
+            fazerParede(0, altura, 950, -400, 1880);
             GL.Color3(Color.Blue);
             fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia - 100);
-            fazerParede(0, alturaFotografia, 950 + comprimentoEstudioFotografia, 0, 1880, larguraEstudioFotografia);
+            fazerParede(0, altura, 950 + comprimentoEstudioFotografia, 0, 1880, larguraEstudioFotografia);
 
             // Parede com Buraco
             GL.Color3(Color.Yellow);
@@ -228,7 +229,7 @@ namespace Biblioteca
 
             //Estudio//
             GL.Color3(Color.Green);
-            fazerParede(0, alturaFotografia, 750, 130, 2040);
+            fazerParede(0, altura, 750, 130, 2040);
             fazerParede(0, altura, 750, 0 , 2040, 320);
             fazerParede(0, altura, 750, 200, 2360);
 
@@ -275,17 +276,6 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
-            //Jarim parte de baixo da recepção
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, texGrama);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(850, 0, 0);
-            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(0, 0, 0);
-            GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(0, -100, 0);
-            GL.TexCoord2(1f, 1f); GL.Vertex3(850, -100, 0);
-            GL.End();
-            GL.Disable(EnableCap.Texture2D);
 
             //Jarim parte de baixo da TV
             GL.Enable(EnableCap.Texture2D);

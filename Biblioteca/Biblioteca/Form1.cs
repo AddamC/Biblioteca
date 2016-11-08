@@ -210,15 +210,16 @@ namespace Biblioteca
             int tipoTecla = 0;
             int sinal = 1;
 
-            if (e.KeyCode == Keys.M)
+            if (e.KeyCode == Keys.Q)
             {
                 valor += 10;
-
+                pos.Z += 100;
                 glControl1.Invalidate();
             }
-            if (e.KeyCode == Keys.N)
+            if (e.KeyCode == Keys.E)
             {
                 valor -= 10;
+                pos.Z -= 100;
                 glControl1.Invalidate();
             }
             if (e.KeyCode == Keys.A)
@@ -244,12 +245,12 @@ namespace Biblioteca
                 tipoTecla = 1;
             }
 
-            if (e.KeyCode == Keys.E)
+            if (e.KeyCode == Keys.Right)
             {
                 a += 3;
                 tipoTecla = 2;
             }
-            if (e.KeyCode == Keys.Q)
+            if (e.KeyCode == Keys.Left)
             {
                 a -= 3;
                 tipoTecla = 2;
