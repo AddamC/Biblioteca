@@ -214,12 +214,12 @@ namespace Biblioteca
 
         public void fazerFotografia()
         {
-            GL.Color3(Color.Gray);
+            GL.Color3(Color.LightGray);
             fazerParede(0, altura, 950, comprimentoEstudioFotografia, 2945);
             fazerParede(0, altura, 950, -400, 2945);
             fazerParede(0, altura, 950, comprimentoEstudioFotografia, 1880);
             fazerParede(0, altura, 950, -400, 1880);
-            GL.Color3(Color.Gray);
+            GL.Color3(Color.LightGray);
             fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia - 100);
             fazerParede(0, altura, 950 + comprimentoEstudioFotografia, 0, 1880, larguraEstudioFotografia);
 
@@ -276,6 +276,42 @@ namespace Biblioteca
             GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(2430, 1680, 0);
             GL.TexCoord2(0 / 984, 1f); GL.Vertex3(2430, 0, 0);
             GL.TexCoord2(1f, 1f); GL.Vertex3(4110, 0, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
+            //Chao do Estudio
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(950 + comprimentoEstudioFotografia , 2945, 0);
+            GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(950, 2945, 0);
+            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(950, 1880, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(950 + comprimentoEstudioFotografia, 1880, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
+            //Chao do laboratório de fotografia
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(950, 2945, 0);
+            GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(550, 2945, 0);
+            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(550, 1880, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(950, 1880, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
+            //Corredor entre estudio e recepção
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(1350, 1880, 0);
+            GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(0, 1880, 0);
+            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(0, 1680, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(1350, 1680, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
