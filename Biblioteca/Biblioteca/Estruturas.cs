@@ -381,10 +381,21 @@ namespace Biblioteca
             GL.BindTexture(TextureTarget.Texture2D, texPav);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-850, 850, 0);
-            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-1800, 850, 0);
-            GL.TexCoord2(0/1600, 1f); GL.Vertex3(-1800, 535, 0);
-            GL.TexCoord2(1f, 1f); GL.Vertex3(-850, 535, 0);
+            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-950, 850, 0);
+            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-1300, 850, 0);
+            GL.TexCoord2(0/1600, 1f); GL.Vertex3(-1300, 535, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(-950, 535, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPav);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-1300, 800, 0);
+            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-2200, 800, 0);
+            GL.TexCoord2(0 / 1600, 1f); GL.Vertex3(-2200, 750, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(-1300, 750, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
