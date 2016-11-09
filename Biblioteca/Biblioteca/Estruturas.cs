@@ -53,7 +53,7 @@ namespace Biblioteca
 
         public void fazerEntrada()
         {
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.DimGray);
             fazerParede(0, altura, -850, 850, 534);
 
             
@@ -63,19 +63,19 @@ namespace Biblioteca
         }
         public void fazerAuditorio()//pular distancia corredor
         {
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.SlateBlue);
             //parede + porta superior          
             fazerParede(0, altura, -2225, largAnfiteatro-661, 3090);//esquerda da porta
             fazerParede(270, altura, -2225, largAnfiteatro-201, 3090);//porta
             fazerParede(0, altura, -1546, largAnfiteatro-679, 3090);//direita da porta
             //
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.PowderBlue);
             fazerParede(0, altura, -2225, largAnfiteatro, 1940);//inferior
             fazerParede(0, altura, -2225, 0, compAnfiteatro, 1150);//esquerda
 
             //parede interior traseira
            
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.Black);
             //fazerParede(0, altura, -1325, -400, compAnfiteatro, 400);//teste de reta
             //GL.Color3(Color.Yellow);//teste
             fazerParede(0, altura, -2225, 140, compAnfiteatro + 400, -140);//esquerda
@@ -85,7 +85,7 @@ namespace Biblioteca
             fazerChao(altura, altura, -1725, largAnfiteatro, 1882, largAnfiteatro);
             /*/
 
-            GL.Color3(Color.Gray);
+            GL.Color3(Color.Turquoise);
             //parede + porta direita
             fazerParede(0, altura, -1125, 0, compAnfiteatro, 255);//esquerda da porta
             fazerParede(270, altura, -1125 , 0, compAnfiteatro+255, 160); //porta
@@ -97,13 +97,12 @@ namespace Biblioteca
             fazerEscada(1, 10, -20, -1575, 100, 3002, 30);
             
 
-
         }
 
         public void fazerRecepcao() //pular distancia do jardim
         {
 
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.DarkSeaGreen);
             paredeBuraco(0, altura, 0, 0, 0, recepCompr,
                          0, 400, 0, 0, 801, recepCompr - 435);
 
@@ -111,7 +110,7 @@ namespace Biblioteca
             //fazerParede(0, 270, 0, 0, 0, 801);
             //fazerParede(0, 270, 0, 0, recepCompr - 435, 435); 1245, 1680 - comprBuraco
 
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.Black);
             fazerParede(260, 270, 0, 0, 801, 445);
             GL.Color4(0.5f, 0.5f, 0.5f, 0.7f);
             fazerParede(270, 400, 0, 0, 801, 445);
@@ -124,7 +123,7 @@ namespace Biblioteca
             fazerParede(0, altura, 0, recepLarg, 0, 0);
 
             fazerParede(0, altura, 0, recepLarg, recepCompr, 0);
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.PaleVioletRed);
             fazerParede(0, altura, 0, largBanheiro - portaBanheiro, recepCompr - 435, 0);
             fazerParede(0, altura, portaBanheiro + largBanheiro2, largBanheiro - portaBanheiro, recepCompr - 435, 0);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2 + porta, largSalaTec - porta, recepCompr - 560, 0); //sala tecnica
@@ -132,7 +131,7 @@ namespace Biblioteca
             fazerParede(0, 100, 550 + porta, 550 - porta, 534, 0); //balcao
             fazerParede(0, 300, 1365, 600, 534, 0); //parede depois do balcao no meio da recepção
 
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.DarkGoldenrod);
             fazerParede(0, altura, portaBanheiro + largBanheiro2, 0, recepCompr - 435, 435);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2, 0, recepCompr - 560, 560);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2 + largSalaTec, 0, recepCompr - 560, 560 - porta);
@@ -151,7 +150,7 @@ namespace Biblioteca
             //paredeBuraco(0, 300, 0, 0, 0, -1000,  //DA ERRO QUANDO VARIA NO EIXO X
             //             0, 270, 0, 0, -500, -700);
 
-            GL.Color3(Color.DarkBlue);
+            GL.Color3(Color.Blue);
             //paredeBuraco(0, 300, 1400, 0, 0, -277, 0, 270, recepCompr, 0, -300, -300);
 
             fazerParede(0, altura, recepLarg, 0, 0, 620);
@@ -168,7 +167,7 @@ namespace Biblioteca
         }
         public void fazerTV()
         {
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.DodgerBlue);
             //         (hi,     hf,  xi,  xf, yi,   if)
             fazerParede(0, altura, -distRecepTV, 0, 800, tamMenorTV);//parede leste
 
@@ -176,14 +175,14 @@ namespace Biblioteca
             fazerParede(0, 270, -distRecepTV, -45, 800);
             fazerParede(0, 270, -distRecepTV - 145, -tamMaiorTV - tamProd + 145, 800);
             fazerParede(270, altura, -distRecepTV, -tamMaiorTV, 800);//parte superior sul
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.DodgerBlue);
             fazerParede(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0); //superior sul sala producao
 
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.LightSteelBlue);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV, 0, 800, 385);//parede interior curta
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.MediumAquamarine);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800, tamMenorTV);//parede oeste
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.Gray);
             fazerParede(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV); //parede norte tv
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, -tamProd + 100, 800 + tamMenorTV);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -165);
@@ -191,7 +190,7 @@ namespace Biblioteca
 
 
 
-            GL.Color3(Color.LightBlue);
+            GL.Color3(Color.BlueViolet);
             fazerParede(0, altura, -distRecepTV - 575, -425, 800 + tamMenorTV + 120);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV, -275, 800 + tamMenorTV + 120);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800+tamMenorTV,550);
