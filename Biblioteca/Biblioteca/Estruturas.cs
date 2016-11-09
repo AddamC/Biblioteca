@@ -60,8 +60,6 @@ namespace Biblioteca
             fazerParede(270, altura, -850,0, 640, 160);//porta
             fazerParede(0, altura, -850, 0, 534, 125);//direita da porta
 
-            GL.Color3(Color.Red);
-            fazerChao(0, 0, -850, 850, 534, 266 );
         }
         public void fazerAuditorio()//pular distancia corredor
         {
@@ -109,14 +107,16 @@ namespace Biblioteca
 
             GL.Color3(Color.DarkSeaGreen);
             paredeBuraco(0, altura, 0, 0, 0, recepCompr,
-                         0, 270, 0, 0, 801, recepCompr - 435);
+                         0, 400, 0, 0, 801, recepCompr - 435);
 
             //fazerParede(270,300,0,0,0,recepCompr);
             //fazerParede(0, 270, 0, 0, 0, 801);
             //fazerParede(0, 270, 0, 0, recepCompr - 435, 435); 1245, 1680 - comprBuraco
 
-            GL.Color4(0f, 0f, 0f, 0.6f);
+            GL.Color3(Color.Black);
             fazerParede(260, 270, 0, 0, 801, 445);
+            GL.Color4(0.5f, 0.5f, 0.5f, 0.7f);
+            fazerParede(270, 400, 0, 0, 801, 445);
             fazerParede(0, 270, 0, 0, 801, 80);
             fazerParede(0, 270, 0, 0,1246-80,80); //1436 = buracoYf
             //paredeBuraco(0, 270, 0, 0, 801, 435,
@@ -368,26 +368,27 @@ namespace Biblioteca
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Polygon);
-            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(0, 450, 0);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(-100, 450, 0);
             GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(-1000, 450, 0);
             GL.TexCoord2(0f / 550f, 85f / 310f); GL.Vertex3(-1000, 300, 0);
             GL.TexCoord2(351f / 550f, 309f / 310f); GL.Vertex3(-200, -100, 0);
-            GL.TexCoord2(1f, 1f); GL.Vertex3(0, -100, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(-100, -100, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
-            //pavimento de fora
+            //pavimento de fora 1
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPav);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-950, 850, 0);
-            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-1300, 850, 0);
+            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-950, 800, 0);
+            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-1300, 800, 0);
             GL.TexCoord2(0/1600, 1f); GL.Vertex3(-1300, 535, 0);
             GL.TexCoord2(1f, 1f); GL.Vertex3(-950, 535, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
+            //2
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPav);
             GL.Color3(Color.Transparent);
@@ -399,14 +400,27 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
+            //3
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPav);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
             GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-0, 535, 0);
-            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-950, 535, 0);
-            GL.TexCoord2(0 / 1600, 1f); GL.Vertex3(-950, 450, 0);
-            GL.TexCoord2(1f, 1f); GL.Vertex3(-0, 450, 0);
+            GL.TexCoord2(200f / 1600f, 0f / 1066f); GL.Vertex3(-950, 535, 0);
+            GL.TexCoord2(200f / 1600f, 400f / 1066f); GL.Vertex3(-950, 450, 0);
+            GL.TexCoord2(1f, 400f / 1066f); GL.Vertex3(-0, 450, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+            
+            //4
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPav);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-0, 535, 0);
+            GL.TexCoord2(200f / 1600f, 0f / 1066f); GL.Vertex3(-200, 535, 0);
+            GL.TexCoord2(200f / 1600f, 400f / 1066f); GL.Vertex3(-200, -100, 0);
+            GL.TexCoord2(1f, 400f / 1066f); GL.Vertex3(-0, -100, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
@@ -417,6 +431,7 @@ namespace Biblioteca
             GL.Color3(Color.LightGray);
             fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
 
+            //chao corredor
             //GL.Color3(Color.LightGray);
             //fazerChao(0, 0, 0, -550, 800, 2000);
             GL.Enable(EnableCap.Texture2D);
@@ -429,6 +444,21 @@ namespace Biblioteca
             GL.TexCoord2(1f, 1f); GL.Vertex3(0, 800, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
+
+            //chao da entrada da biblioteca
+            //GL.Color3(Color.Red);
+            //fazerChao(0, 0, -850, 850, 534, 266);
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(0, 534, 0);
+            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-850, 534, 0);
+            GL.TexCoord2(0 / 1600, 1f); GL.Vertex3(-850, 800, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(0, 800, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
         }
 
     }
