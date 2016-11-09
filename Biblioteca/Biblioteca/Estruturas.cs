@@ -363,6 +363,17 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPav);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-0, 535, 0);
+            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-950, 535, 0);
+            GL.TexCoord2(0 / 1600, 1f); GL.Vertex3(-950, 450, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(-0, 450, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
             //Saguao
             GL.Color3(Color.LightGray);
             fazerChao2(0, 0, 2430, 1680, 0, 1680);

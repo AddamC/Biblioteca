@@ -47,7 +47,7 @@ namespace Biblioteca
             texPorta = LoadTexture("../../Recursos/portaFEMA.png");
             texGrama = LoadTexture("../../Recursos/Grama.jpg");
             texPiso = LoadTexture("../../Recursos/Piso.jpg");
-            texPav = LoadTexture("../../Recursos/pavimento.png");
+            texPav = LoadTexture("../../Recursos/pavimento2.png");
             SetupViewport();                      //configura a janela de pintura
         }
 
