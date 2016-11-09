@@ -236,7 +236,7 @@ namespace Biblioteca
 
         }
 
-        public void FazerChaoComodos(int texGrama, int texPiso, int texPav)
+        public void FazerChaoComodos(int texGrama, int texPiso, int[] texPav)
         {
             //Recepção simples
             //GL.Color3(Color.LightGray);
@@ -351,17 +351,7 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
-            //Jardim parte de baixo da recepção
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, texGrama);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(850, 0, 0);
-            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(0, 0, 0);
-            GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(0, -100, 0);
-            GL.TexCoord2(1f, 1f); GL.Vertex3(850, -100, 0);
-            GL.End();
-            GL.Disable(EnableCap.Texture2D);
+            
 
             //Jardim parte de baixo da TV
             GL.Enable(EnableCap.Texture2D);
@@ -378,7 +368,7 @@ namespace Biblioteca
 
             //pavimento de fora 1
             GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, texPav);
+            GL.BindTexture(TextureTarget.Texture2D, texPav[0]);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
             GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-950, 800, 0);
@@ -390,7 +380,7 @@ namespace Biblioteca
 
             //2
             GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, texPav);
+            GL.BindTexture(TextureTarget.Texture2D, texPav[0]);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
             GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-1300, 800, 0);
@@ -402,7 +392,7 @@ namespace Biblioteca
 
             //3
             GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, texPav);
+            GL.BindTexture(TextureTarget.Texture2D, texPav[0]);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
             GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-0, 535, 0);
@@ -414,13 +404,25 @@ namespace Biblioteca
             
             //4
             GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, texPav);
+            GL.BindTexture(TextureTarget.Texture2D, texPav[0]);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
             GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-0, 535, 0);
             GL.TexCoord2(200f / 1600f, 0f / 1066f); GL.Vertex3(-200, 535, 0);
             GL.TexCoord2(200f / 1600f, 400f / 1066f); GL.Vertex3(-200, -100, 0);
             GL.TexCoord2(1f, 400f / 1066f); GL.Vertex3(-0, -100, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
+            //5
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPav[1]);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(850, 0, 0);
+            GL.TexCoord2(200f / 1600f, 0f / 1066f); GL.Vertex3(0, 0, 0);
+            GL.TexCoord2(200f / 1600f, 400f / 1066f); GL.Vertex3(0, -100, 0);
+            GL.TexCoord2(1f, 400f / 1066f); GL.Vertex3(850, -100, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 

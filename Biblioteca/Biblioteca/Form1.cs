@@ -30,7 +30,7 @@ namespace Biblioteca
         int texPorta;
         int texGrama;
         int texPiso;
-        int texPav;
+        int[] texPav = new int[2];
 
 
         public Form1()
@@ -47,7 +47,8 @@ namespace Biblioteca
             texPorta = LoadTexture("../../Recursos/portaFEMA.png");
             texGrama = LoadTexture("../../Recursos/Grama.jpg");
             texPiso = LoadTexture("../../Recursos/Piso.jpg");
-            texPav = LoadTexture("../../Recursos/pavimento2.png");
+            texPav[0] = LoadTexture("../../Recursos/pavimento2.png");
+            texPav[1] = LoadTexture("../../Recursos/pavimento.png");
             SetupViewport();                      //configura a janela de pintura
         }
 
