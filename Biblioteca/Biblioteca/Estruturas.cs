@@ -53,7 +53,7 @@ namespace Biblioteca
 
         public void fazerEntrada()
         {
-            GL.Color3(Color.DimGray);
+            GL.Color3(Color.LightBlue);
             fazerParede(0, altura, -850, 850, 534);
 
             
@@ -63,19 +63,19 @@ namespace Biblioteca
         }
         public void fazerAuditorio()//pular distancia corredor
         {
-            GL.Color3(Color.SlateBlue);
+            GL.Color3(Color.LightBlue);
             //parede + porta superior          
             fazerParede(0, altura, -2225, largAnfiteatro-661, 3090);//esquerda da porta
             fazerParede(270, altura, -2225, largAnfiteatro-201, 3090);//porta
             fazerParede(0, altura, -1546, largAnfiteatro-679, 3090);//direita da porta
             //
-            GL.Color3(Color.PowderBlue);
+            GL.Color3(Color.LightBlue);
             fazerParede(0, altura, -2225, largAnfiteatro, 1940);//inferior
             fazerParede(0, altura, -2225, 0, compAnfiteatro, 1150);//esquerda
 
             //parede interior traseira
            
-            GL.Color3(Color.Black);
+            GL.Color3(Color.LightBlue);
             //fazerParede(0, altura, -1325, -400, compAnfiteatro, 400);//teste de reta
             //GL.Color3(Color.Yellow);//teste
             fazerParede(0, altura, -2225, 140, compAnfiteatro + 400, -140);//esquerda
@@ -85,7 +85,7 @@ namespace Biblioteca
             fazerChao(altura, altura, -1725, largAnfiteatro, 1882, largAnfiteatro);
             /*/
 
-            GL.Color3(Color.Turquoise);
+            GL.Color3(Color.Gray);
             //parede + porta direita
             fazerParede(0, altura, -1125, 0, compAnfiteatro, 255);//esquerda da porta
             fazerParede(270, altura, -1125 , 0, compAnfiteatro+255, 160); //porta
@@ -95,9 +95,7 @@ namespace Biblioteca
             GL.Color3(Color.Black);
             fazerEscada(1, 10, -20, -1225, 100, 2680, 30);
             fazerEscada(1, 10, -20, -1575, 100, 3002, 30);
-            //
-            GL.Color3(Color.LightGray);
-            fazerChao(0, 0, -2225, largAnfiteatro, 1940,largAnfiteatro+50);
+            
 
 
         }
@@ -105,7 +103,7 @@ namespace Biblioteca
         public void fazerRecepcao() //pular distancia do jardim
         {
 
-            GL.Color3(Color.DarkSeaGreen);
+            GL.Color3(Color.LightBlue);
             paredeBuraco(0, altura, 0, 0, 0, recepCompr,
                          0, 400, 0, 0, 801, recepCompr - 435);
 
@@ -113,7 +111,7 @@ namespace Biblioteca
             //fazerParede(0, 270, 0, 0, 0, 801);
             //fazerParede(0, 270, 0, 0, recepCompr - 435, 435); 1245, 1680 - comprBuraco
 
-            GL.Color3(Color.Black);
+            GL.Color3(Color.LightBlue);
             fazerParede(260, 270, 0, 0, 801, 445);
             GL.Color4(0.5f, 0.5f, 0.5f, 0.7f);
             fazerParede(270, 400, 0, 0, 801, 445);
@@ -126,7 +124,7 @@ namespace Biblioteca
             fazerParede(0, altura, 0, recepLarg, 0, 0);
 
             fazerParede(0, altura, 0, recepLarg, recepCompr, 0);
-            GL.Color3(Color.PaleVioletRed);
+            GL.Color3(Color.LightBlue);
             fazerParede(0, altura, 0, largBanheiro - portaBanheiro, recepCompr - 435, 0);
             fazerParede(0, altura, portaBanheiro + largBanheiro2, largBanheiro - portaBanheiro, recepCompr - 435, 0);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2 + porta, largSalaTec - porta, recepCompr - 560, 0); //sala tecnica
@@ -134,7 +132,7 @@ namespace Biblioteca
             fazerParede(0, 100, 550 + porta, 550 - porta, 534, 0); //balcao
             fazerParede(0, 300, 1365, 600, 534, 0); //parede depois do balcao no meio da recepção
 
-            GL.Color3(Color.DarkGoldenrod);
+            GL.Color3(Color.LightBlue);
             fazerParede(0, altura, portaBanheiro + largBanheiro2, 0, recepCompr - 435, 435);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2, 0, recepCompr - 560, 560);
             fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2 + largSalaTec, 0, recepCompr - 560, 560 - porta);
@@ -153,7 +151,7 @@ namespace Biblioteca
             //paredeBuraco(0, 300, 0, 0, 0, -1000,  //DA ERRO QUANDO VARIA NO EIXO X
             //             0, 270, 0, 0, -500, -700);
 
-            GL.Color3(Color.Blue);
+            GL.Color3(Color.DarkBlue);
             //paredeBuraco(0, 300, 1400, 0, 0, -277, 0, 270, recepCompr, 0, -300, -300);
 
             fazerParede(0, altura, recepLarg, 0, 0, 620);
@@ -170,7 +168,7 @@ namespace Biblioteca
         }
         public void fazerTV()
         {
-            GL.Color3(Color.DodgerBlue);
+            GL.Color3(Color.LightBlue);
             //         (hi,     hf,  xi,  xf, yi,   if)
             fazerParede(0, altura, -distRecepTV, 0, 800, tamMenorTV);//parede leste
 
@@ -178,18 +176,14 @@ namespace Biblioteca
             fazerParede(0, 270, -distRecepTV, -45, 800);
             fazerParede(0, 270, -distRecepTV - 145, -tamMaiorTV - tamProd + 145, 800);
             fazerParede(270, altura, -distRecepTV, -tamMaiorTV, 800);//parte superior sul
-            GL.Color3(Color.DodgerBlue);
+            GL.Color3(Color.LightBlue);
             fazerParede(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0); //superior sul sala producao
 
-
-            //chao
-            GL.Color3(Color.LawnGreen);
-            fazerChao(0, 0, -distRecepTV, -tamMaiorTV, 800, tamMenorTV);
-            GL.Color3(Color.LightSteelBlue);
+            GL.Color3(Color.LightBlue);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV, 0, 800, 385);//parede interior curta
-            GL.Color3(Color.MediumAquamarine);
+            GL.Color3(Color.LightBlue);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800, tamMenorTV);//parede oeste
-            GL.Color3(Color.Gray);
+            GL.Color3(Color.LightBlue);
             fazerParede(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV); //parede norte tv
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, -tamProd + 100, 800 + tamMenorTV);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -165);
@@ -197,7 +191,7 @@ namespace Biblioteca
 
 
 
-            GL.Color3(Color.BlueViolet);
+            GL.Color3(Color.LightBlue);
             fazerParede(0, altura, -distRecepTV - 575, -425, 800 + tamMenorTV + 120);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV, -275, 800 + tamMenorTV + 120);
             fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800+tamMenorTV,550);
@@ -214,12 +208,12 @@ namespace Biblioteca
 
         public void fazerFotografia()
         {
-            GL.Color3(Color.LightGray);
+            GL.Color3(Color.Gray);
             fazerParede(0, altura, 950, comprimentoEstudioFotografia, 2945);
             fazerParede(0, altura, 950, -400, 2945);
             fazerParede(0, altura, 950, comprimentoEstudioFotografia, 1880);
             fazerParede(0, altura, 950, -400, 1880);
-            GL.Color3(Color.LightGray);
+            GL.Color3(Color.Gray);
             fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia - 100);
             fazerParede(0, altura, 950 + comprimentoEstudioFotografia, 0, 1880, larguraEstudioFotografia);
 
@@ -312,6 +306,18 @@ namespace Biblioteca
             GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(0, 1880, 0);
             GL.TexCoord2(0 / 984, 1f); GL.Vertex3(0, 1680, 0);
             GL.TexCoord2(1f, 1f); GL.Vertex3(1350, 1680, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
+            //Chao auditório + TV 
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(-550, 3090, 0);
+            GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(-2225, 3090, 0);
+            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(-2225, 800, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(-550, 800, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
