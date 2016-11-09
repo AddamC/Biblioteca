@@ -88,17 +88,7 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Blend);
 
-            //EXEMPLO DE OBJETO TRANSPARENTE
-            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
-            GL.Enable(EnableCap.Blend);
-            GL.Color4(0.1f, 0.5f, 0.6f, 0.6f); //Último parâmetro é a porcentagem de trasparência
-
-            GL.Begin(PrimitiveType.Quads);
-            GL.Vertex3(-80, 50, 0);
-            GL.Vertex3(-80, 100, 0);
-            GL.Vertex3(-80, 100, 50);
-            GL.Vertex3(-80, 50, 50);
-            GL.End();
+            
 
 
             //GL.Enable(EnableCap.Texture2D);
@@ -290,6 +280,9 @@ namespace Biblioteca
                 calcula_direcao();
                 glControl1.Invalidate();
             }
+            txtPosX.Text = Convert.ToInt16(pos.X).ToString();
+            txtPosY.Text = Convert.ToInt16(pos.Y).ToString();
+            txtPosZ.Text = Convert.ToInt16(pos.Z).ToString();
         }
 
         private void glControl1_Resize(object sender, EventArgs e)
