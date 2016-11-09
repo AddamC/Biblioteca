@@ -307,14 +307,16 @@ namespace Biblioteca
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
             GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(0, 535, 0);
-            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(-1000, 535, 0);
-            GL.TexCoord2(0f / 550f, 1f); GL.Vertex3(-1000, -100, 0);
+            GL.Begin(PrimitiveType.Polygon);
+            GL.TexCoord2(1f, 0f / 310f); GL.Vertex3(0, 450, 0);
+            GL.TexCoord2(0f / 550f, 0f / 310f); GL.Vertex3(-1000, 450, 0);
+            GL.TexCoord2(0f / 550f, 85f / 310f); GL.Vertex3(-1000, 300, 0);
+            GL.TexCoord2(351f / 550f, 309f / 310f); GL.Vertex3(-200, -100, 0);
             GL.TexCoord2(1f, 1f); GL.Vertex3(0, -100, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
+            //pavimento de fora
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPav);
             GL.Color3(Color.Transparent);
@@ -332,7 +334,19 @@ namespace Biblioteca
             //Fotografia
             GL.Color3(Color.LightGray);
             fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
-            
+
+            //GL.Color3(Color.LightGray);
+            //fazerChao(0, 0, 0, -550, 800, 2000);
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(0, 2800, 0);
+            GL.TexCoord2(0 / 1600, 0f / 1066f); GL.Vertex3(-550, 2800, 0);
+            GL.TexCoord2(0 / 1600, 1f); GL.Vertex3(-550, 800, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(0, 800, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
         }
 
     }

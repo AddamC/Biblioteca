@@ -40,10 +40,9 @@ namespace Biblioteca
 
         private void glControl1_Load(object sender, EventArgs e)
         {
-            GL.ClearColor(Color.GhostWhite);         // definindo a cor de limpeza do fundo da tela
+            GL.ClearColor(Color.Black);         // definindo a cor de limpeza do fundo da tela
             GL.Enable(EnableCap.Light0);
-
-
+            
             //texTelhado = LoadTexture("../../textura/telhado.jpg");
             texPorta = LoadTexture("../../Recursos/portaFEMA.png");
             texGrama = LoadTexture("../../Recursos/Grama.jpg");
