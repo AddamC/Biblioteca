@@ -255,6 +255,30 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
+            //Chao entre a recepção e o saguão
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(2430, 1110, 0);
+            GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(2230, 1110, 0);
+            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(2230, 570, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(2430, 570, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
+            //Chao do Saguão
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            GL.Color3(Color.Transparent);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(4110, 1680, 0);
+            GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(2430, 1680, 0);
+            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(2430, 0, 0);
+            GL.TexCoord2(1f, 1f); GL.Vertex3(4110, 0, 0);
+            GL.End();
+            GL.Disable(EnableCap.Texture2D);
+
             //Jardim parte de baixo
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texGrama);
