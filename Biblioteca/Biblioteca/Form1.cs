@@ -170,6 +170,9 @@ namespace Biblioteca
             dir.X = pos.X + (Math.Sin(camera_rotation * Math.PI / 180) * 1000);
             dir.Y = pos.Y + (Math.Cos(camera_rotation * Math.PI / 180) * 1000);
             dir.Z = pos.Z + (Math.Tan(camera_rotation2 * Math.PI / 180) * 1000);
+            txtDirX.Text = Convert.ToInt16(dir.X).ToString();
+            txtDirY.Text = Convert.ToInt16(dir.Y).ToString();
+            txtDirZ.Text = Convert.ToInt16(dir.Z).ToString();
         }
 
         private void glControl1_MouseMove(object sender, MouseEventArgs e)
