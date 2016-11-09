@@ -399,22 +399,24 @@ namespace Biblioteca
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPav[0]);
             GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Quads);
+            GL.Begin(PrimitiveType.Polygon);
             GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-0, 535, 0);
-            GL.TexCoord2(200f / 1600f, 0f / 1066f); GL.Vertex3(-950, 535, 0);
-            GL.TexCoord2(200f / 1600f, 400f / 1066f); GL.Vertex3(-950, 450, 0);
-            GL.TexCoord2(1f, 400f / 1066f); GL.Vertex3(-0, 450, 0);
+            GL.TexCoord2(200f / 1600f, 0f / 1066f); GL.Vertex3(-1300, 535, 0);
+            GL.TexCoord2(200f / 1600f, 400f / 1066f); GL.Vertex3(-1300, -1000, 0);
+            GL.TexCoord2(1f, 400f / 1066f); GL.Vertex3(-1000, -1000, 0);
+            GL.TexCoord2(1f, 400f / 1066f); GL.Vertex3(-1000, 450, 0);
+            GL.Vertex3(0, 450, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
-            
+
             //4
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPav[0]);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
             GL.TexCoord2(1f, 0f / 1066f); GL.Vertex3(-0, 535, 0);
-            GL.TexCoord2(200f / 1600f, 0f / 1066f); GL.Vertex3(-200, 535, 0);
-            GL.TexCoord2(200f / 1600f, 400f / 1066f); GL.Vertex3(-200, -100, 0);
+            GL.TexCoord2(200f / 1600f, 0f / 1066f); GL.Vertex3(-100, 535, 0);
+            GL.TexCoord2(200f / 1600f, 400f / 1066f); GL.Vertex3(-100, -100, 0);
             GL.TexCoord2(1f, 400f / 1066f); GL.Vertex3(-0, -100, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
