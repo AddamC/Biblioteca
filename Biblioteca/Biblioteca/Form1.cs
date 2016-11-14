@@ -82,7 +82,7 @@ namespace Biblioteca
             GL.End();
 
             GL.Disable(EnableCap.Blend);
-            
+
 
             //GL.Enable(EnableCap.Texture2D);
             //GL.BindTexture(TextureTarget.Texture2D, texPorta);
@@ -94,13 +94,13 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-            //estrutura.fazerEntrada();
-            //estrutura.fazerAuditorio();
+            estrutura.fazerEntrada();
+            estrutura.fazerAuditorio();
             estrutura.fazerRecepcao(texParede);
-            //estrutura.fazerFotografia(texParede);
-            //estrutura.fazerSaguao();
-            //estrutura.fazerTV();
-            //estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
+            estrutura.fazerFotografia(texParede);
+            estrutura.fazerSaguao();
+            estrutura.fazerTV();
+            estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
 
 
@@ -114,9 +114,9 @@ namespace Biblioteca
 
             glControl1.SwapBuffers(); //troca os buffers de frente e de fundo 
 
-            txtDirX.Text = Convert.ToInt16(dir.X).ToString();
-            txtDirY.Text = Convert.ToInt16(dir.Y).ToString();
-            txtDirZ.Text = Convert.ToInt16(dir.Z).ToString();
+            //txtDirX.Text = Convert.ToInt16(dir.X).ToString();
+            //txtDirY.Text = Convert.ToInt16(dir.Y).ToString();
+            //txtDirZ.Text = Convert.ToInt16(dir.Z).ToString();
         }
         private void SetupViewport() //configura a janela de projeção 
         {
@@ -276,9 +276,9 @@ namespace Biblioteca
                 calcula_direcao();
                 glControl1.Invalidate();
             }
-            txtPosX.Text = Convert.ToInt16(pos.X).ToString();
-            txtPosY.Text = Convert.ToInt16(pos.Y).ToString();
-            txtPosZ.Text = Convert.ToInt16(pos.Z).ToString();
+            //txtPosX.Text = Convert.ToInt16(pos.X).ToString();
+            //txtPosY.Text = Convert.ToInt16(pos.Y).ToString();
+            //txtPosZ.Text = Convert.ToInt16(pos.Z).ToString();
 
         }
 

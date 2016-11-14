@@ -54,12 +54,14 @@ namespace Biblioteca
         public void fazerEntrada()
         {
             GL.Color3(Color.DimGray);
-            fazerParede(0, altura, -850, 850, 534);
-
+            fazerParede(0, altura/5, -850, 850, 534);
             
             fazerParede(270, altura, -850,0, 640, 160);//porta
             fazerParede(0, altura, -850, 0, 534, 125);//direita da porta
+            GL.Color3(Color.LightPink);
+            fazerChao((450*altura/5)/534, 1000, -850, 850, 534, 500);
 
+            //fazerParede(0, altura, -distRecepTV, 0, 800, tamMenorTV);
         }
         public void fazerAuditorio()//pular distancia corredor
         {
@@ -117,9 +119,9 @@ namespace Biblioteca
             fazerParede(0, 270, 0, 0, 801, 80);
             fazerParede(0, 270, 0, 0,1246-80,80); //1436 = buracoYf
 
-            GL.Color3(Color.LightCyan);
+            GL.Color3(Color.LightBlue);
             paredeTextura(0, altura, 0, recepLarg, 0, 0, texParede);
-            //fazerParede(0, altura, 0, recepLarg, recepCompr, 0);
+            paredeTextura(0, altura, 0, recepLarg, recepCompr, 0, texParede);
 
             GL.Color3(Color.PaleVioletRed);
             fazerParede(0, altura, 0, largBanheiro - portaBanheiro, recepCompr - 435, 0);
@@ -148,11 +150,11 @@ namespace Biblioteca
             //paredeBuraco(0, 300, 0, 0, 0, -1000,  //DA ERRO QUANDO VARIA NO EIXO X
             //             0, 270, 0, 0, -500, -700);
 
-            GL.Color3(Color.Blue);
+            GL.Color3(Color.LightBlue);
             //paredeBuraco(0, 300, 1400, 0, 0, -277, 0, 270, recepCompr, 0, -300, -300);
 
-            fazerParede(0, altura, recepLarg, 0, 0, 620);
-            fazerParede(0, altura, recepLarg, 0, recepCompr, -620);
+            paredeTextura(0, altura, recepLarg, 0, 0, 620, texParede);
+            paredeTextura(0, altura, recepLarg, 0, recepCompr, -620, texParede);
         }
         public void fazerSaguao() //pular distancia do jardim
         {
