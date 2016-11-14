@@ -112,7 +112,7 @@ namespace Biblioteca
             estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
             estrutura.fazerSaguao();
             estrutura.fazerTV();
-            //estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
+            estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
             
 

@@ -293,29 +293,29 @@ namespace Biblioteca
 
             fazerChao(altura, altura, 2430, 1680, 1680, -1680);
 
-            //Chao do Estudio
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, texPiso);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(950 + comprimentoEstudioFotografia , 2945, 0);
-            GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(950, 2945, 0);
-            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(950, 1880, 0);
-            GL.TexCoord2(1f, 1f); GL.Vertex3(950 + comprimentoEstudioFotografia, 1880, 0);
-            GL.End();
-            GL.Disable(EnableCap.Texture2D);
+            ////Chao do Estudio
+            //GL.Enable(EnableCap.Texture2D);
+            //GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            //GL.Color3(Color.Transparent);
+            //GL.Begin(PrimitiveType.Quads);
+            //GL.TexCoord2(1f, 0 / 568); GL.Vertex3(950 + comprimentoEstudioFotografia , 2945, 0);
+            //GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(950, 2945, 0);
+            //GL.TexCoord2(0 / 984, 1f); GL.Vertex3(950, 1880, 0);
+            //GL.TexCoord2(1f, 1f); GL.Vertex3(950 + comprimentoEstudioFotografia, 1880, 0);
+            //GL.End();
+            //GL.Disable(EnableCap.Texture2D);
 
-            //Chao do laboratório de fotografia
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, texPiso);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(950, 2945, 0);
-            GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(550, 2945, 0);
-            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(550, 1880, 0);
-            GL.TexCoord2(1f, 1f); GL.Vertex3(950, 1880, 0);
-            GL.End();
-            GL.Disable(EnableCap.Texture2D);
+            ////Chao do laboratório de fotografia
+            //GL.Enable(EnableCap.Texture2D);
+            //GL.BindTexture(TextureTarget.Texture2D, texPiso);
+            //GL.Color3(Color.Transparent);
+            //GL.Begin(PrimitiveType.Quads);
+            //GL.TexCoord2(1f, 0 / 568); GL.Vertex3(950, 2945, 0);
+            //GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(550, 2945, 0);
+            //GL.TexCoord2(0 / 984, 1f); GL.Vertex3(550, 1880, 0);
+            //GL.TexCoord2(1f, 1f); GL.Vertex3(950, 1880, 0);
+            //GL.End();
+            //GL.Disable(EnableCap.Texture2D);
 
             //Corredor entre estudio e recepção
             GL.Enable(EnableCap.Texture2D);
@@ -493,7 +493,7 @@ namespace Biblioteca
             fazerChao2(0, 0, 2430, 1680, 0, 1680);
             //Fotografia
             GL.Color3(Color.LightGray);
-            fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
+           // fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
 
             //chao corredor
             //GL.Color3(Color.LightGray);
