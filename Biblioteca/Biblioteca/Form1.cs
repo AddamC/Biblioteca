@@ -32,6 +32,8 @@ namespace Biblioteca
         int texPiso;
         int[] texPav = new int[2];
         int texParede;
+        int textPortaFoto;
+        int textChaoFoto;
 
 
         public Form1()
@@ -47,10 +49,11 @@ namespace Biblioteca
             //texTelhado = LoadTexture("../../textura/telhado.jpg");
             texPorta = LoadTexture("../../Recursos/portaFEMA.png");
             texGrama = LoadTexture("../../Recursos/Grama.jpg");
-            texPiso = LoadTexture("../../Recursos/Piso.jpg");
             texPav[0] = LoadTexture("../../Recursos/pavimento2.png");
             texPav[1] = LoadTexture("../../Recursos/pavimento.png");
-            texParede = LoadTexture("../../Recursos/parede.jpg");
+            texParede = LoadTexture("../../Recursos/fotografia.jpg");
+            textPortaFoto = LoadTexture("../../Recursos/PortaFotografia.png");
+            textChaoFoto = LoadTexture("../../Recursos/chaoFotografia.jpg");
             SetupViewport();                      //configura a janela de pintura
         }
 
@@ -103,13 +106,13 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-          //  estrutura.fazerEntrada();
-           // estrutura.fazerAuditorio();
-          //  estrutura.fazerRecepcao();
-            estrutura.fazerFotografia(texParede);
-           // estrutura.fazerSaguao();
-          //  estrutura.fazerTV();
-          //  estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
+             estrutura.fazerEntrada();
+            estrutura.fazerAuditorio();
+            estrutura.fazerRecepcao();
+            estrutura.fazerFotografia(texParede, textChaoFoto, textPortaFoto);
+            estrutura.fazerSaguao();
+            estrutura.fazerTV();
+            //estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
             
 
