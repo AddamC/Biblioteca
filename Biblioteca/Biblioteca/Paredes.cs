@@ -18,8 +18,6 @@ namespace Biblioteca
         public void fazerParede(float hi, float hf, float xi,
                                  float comprX, float yi, float yf)
         {
-            //GL.Color3(Color.Gray);
-
             GL.Begin(PrimitiveType.Quads);
             GL.Vertex3(xi, yi, hi);
             GL.Vertex3(xi, yi, hf);
@@ -31,8 +29,6 @@ namespace Biblioteca
                                          float comprX, float yi, float yf,
                                         int textura)
         {
-            //GL.Color3(Color.Gray);
-
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, textura);
             GL.Begin(PrimitiveType.Quads);
@@ -42,13 +38,12 @@ namespace Biblioteca
             GL.TexCoord2(1, 1); GL.Vertex3(xi + comprX, yi + yf, hi);
             GL.End();
             GL.Disable(EnableCap.Blend);
+            
         }
 
         public void fazerChao(float hi, float hf, float xi,
                               float comprX, float yi, float yf)
         {
-           // GL.Color3(Color.Gray);
-
             GL.Begin(PrimitiveType.Quads);
             GL.Vertex3(xi, yi, hi);
             GL.Vertex3(xi, yi+yf, hf);
@@ -60,14 +55,27 @@ namespace Biblioteca
         public void fazerChao2(float hi, float hf, float xi,
                               float comprX, float yi, float yf)
         {
-           // GL.Color3(Color.Gray);
-
             GL.Begin(PrimitiveType.Quads);
             GL.Vertex3(xi, yi, hi);
             GL.Vertex3(xi+comprX, yi, hf);
             GL.Vertex3(xi+comprX, yi + yf, hf);
             GL.Vertex3(xi, yi + yf, hi);
             GL.End();
+        }
+
+        public void chaoTextura(float hi, float hf, float xi,
+                              float comprX, float yi, float yf,
+                              int textura)
+        {
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, textura);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(0, 1); GL.Vertex3(xi, yi, hi);
+            GL.TexCoord2(0, 0); GL.Vertex3(xi, yi + yf, hf);
+            GL.TexCoord2(1, 0); GL.Vertex3(xi + comprX, yi + yf, hf);
+            GL.TexCoord2(1, 1); GL.Vertex3(xi + comprX, yi, hi);
+            GL.End();
+            GL.Disable(EnableCap.Blend);
         }
 
         public void fazerParede(float hi, float hf, float xi,
