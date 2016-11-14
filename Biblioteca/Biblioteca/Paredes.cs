@@ -91,21 +91,6 @@ namespace Biblioteca
             GL.End();
         }
 
-        public void chaoTextura(float hi, float hf, float xi,
-                              float comprX, float yi, float yf,
-                              int textura)
-        {
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, textura);
-            GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(0, 1); GL.Vertex3(xi, yi, hi);
-            GL.TexCoord2(0, 0); GL.Vertex3(xi, yi + yf, hf);
-            GL.TexCoord2(1, 0); GL.Vertex3(xi + comprX, yi + yf, hf);
-            GL.TexCoord2(1, 1); GL.Vertex3(xi + comprX, yi, hi);
-            GL.End();
-            GL.Disable(EnableCap.Blend);
-        }
-
         public void paredeBuraco(float hi, float hf, float xi,
                                  float comprX, float yi, float yf, 
                                  float buracoHi, float buracoHf,

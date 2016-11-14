@@ -31,9 +31,9 @@ namespace Biblioteca
         int texGrama;
         int texPiso;
         int[] texPav = new int[2];
-        //int texparede;
-        //int textportafoto;
-        //int textchaofoto;
+        int texParede;
+        int texPortaFoto;
+        int texChaoFoto;
 
 
         public Form1()
@@ -52,8 +52,8 @@ namespace Biblioteca
             texPav[0] = LoadTexture("../../Recursos/pavimento2.png");
             texPav[1] = LoadTexture("../../Recursos/pavimento.png");
             texParede = LoadTexture("../../Recursos/fotografia.jpg");
-            textPortaFoto = LoadTexture("../../Recursos/PortaFotografia.png");
-            textChaoFoto = LoadTexture("../../Recursos/chaoFotografia.jpg");
+            texPortaFoto = LoadTexture("../../Recursos/PortaFotografia.png");
+            texChaoFoto = LoadTexture("../../Recursos/chaoFotografia.jpg");
             SetupViewport();                      //configura a janela de pintura
         }
 
@@ -108,8 +108,8 @@ namespace Biblioteca
 
              estrutura.fazerEntrada();
             estrutura.fazerAuditorio();
-            estrutura.fazerRecepcao();
-            estrutura.fazerFotografia(texParede, textChaoFoto, textPortaFoto);
+            estrutura.fazerRecepcao(texParede);
+            estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
             estrutura.fazerSaguao();
             estrutura.fazerTV();
             //estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
@@ -126,9 +126,9 @@ namespace Biblioteca
 
             glControl1.SwapBuffers(); //troca os buffers de frente e de fundo 
 
-            txtDirX.Text = Convert.ToInt16(dir.X).ToString();
-            txtDirY.Text = Convert.ToInt16(dir.Y).ToString();
-            txtDirZ.Text = Convert.ToInt16(dir.Z).ToString();
+            //txtDirX.Text = Convert.ToInt16(dir.X).ToString();
+            //txtDirY.Text = Convert.ToInt16(dir.Y).ToString();
+            //txtDirZ.Text = Convert.ToInt16(dir.Z).ToString();
         }
         private void SetupViewport() //configura a janela de projeção 
         {
@@ -288,9 +288,9 @@ namespace Biblioteca
                 calcula_direcao();
                 glControl1.Invalidate();
             }
-            txtPosX.Text = Convert.ToInt16(pos.X).ToString();
-            txtPosY.Text = Convert.ToInt16(pos.Y).ToString();
-            txtPosZ.Text = Convert.ToInt16(pos.Z).ToString();
+            //txtPosX.Text = Convert.ToInt16(pos.X).ToString();
+            //txtPosY.Text = Convert.ToInt16(pos.Y).ToString();
+            //txtPosZ.Text = Convert.ToInt16(pos.Z).ToString();
 
         }
 
