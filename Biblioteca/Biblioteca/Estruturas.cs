@@ -99,7 +99,7 @@ namespace Biblioteca
 
         }
 
-        public void fazerRecepcao() //pular distancia do jardim
+        public void fazerRecepcao(int texParede) //pular distancia do jardim
         {
 
             GL.Color3(Color.DarkSeaGreen);
@@ -116,13 +116,11 @@ namespace Biblioteca
             fazerParede(270, 400, 0, 0, 801, 445);
             fazerParede(0, 270, 0, 0, 801, 80);
             fazerParede(0, 270, 0, 0,1246-80,80); //1436 = buracoYf
-            //paredeBuraco(0, 270, 0, 0, 801, 435,
-            //             0, 260, 0, 0, 850, 435+50);
 
-            GL.Color3(Color.Gray);
-            fazerParede(0, altura, 0, recepLarg, 0, 0);
+            GL.Color3(Color.LightCyan);
+            paredeTextura(0, altura, 0, recepLarg, 0, 0, texParede);
+            //fazerParede(0, altura, 0, recepLarg, recepCompr, 0);
 
-            fazerParede(0, altura, 0, recepLarg, recepCompr, 0);
             GL.Color3(Color.PaleVioletRed);
             fazerParede(0, altura, 0, largBanheiro - portaBanheiro, recepCompr - 435, 0);
             fazerParede(0, altura, portaBanheiro + largBanheiro2, largBanheiro - portaBanheiro, recepCompr - 435, 0);
@@ -205,7 +203,7 @@ namespace Biblioteca
 
         }
 
-        public void fazerFotografia()
+        public void fazerFotografia(int texParede)
         {
             GL.Color3(Color.Gray);
             fazerParede(0, altura, 950, comprimentoEstudioFotografia, 2945);
@@ -227,6 +225,8 @@ namespace Biblioteca
             fazerParede(0, altura, 750, 0 , 2040, 320);
             fazerParede(0, altura, 750, 200, 2360);
 
+            paredeTextura(0, altura, 950, 0, 1980, larguraEstudioFotografia - 100, texParede);
+            fazerParede(0, altura, 950, comprimentoEstudioFotografia, 1880);
         }
 
         public void FazerChaoComodos(int texGrama, int texPiso, int[] texPav)

@@ -94,13 +94,13 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-            estrutura.fazerEntrada();
-            estrutura.fazerAuditorio();
-            estrutura.fazerRecepcao();
-            estrutura.fazerFotografia();
-            estrutura.fazerSaguao();
-            estrutura.fazerTV();
-            estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
+            //estrutura.fazerEntrada();
+            //estrutura.fazerAuditorio();
+            estrutura.fazerRecepcao(texParede);
+            //estrutura.fazerFotografia(texParede);
+            //estrutura.fazerSaguao();
+            //estrutura.fazerTV();
+            //estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
 
 
