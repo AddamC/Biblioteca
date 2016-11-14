@@ -31,9 +31,9 @@ namespace Biblioteca
         int texGrama;
         int texPiso;
         int[] texPav = new int[2];
-        int texParede;
-        int textPortaFoto;
-        int textChaoFoto;
+        //int texparede;
+        //int textportafoto;
+        //int textchaofoto;
 
 
         public Form1()
