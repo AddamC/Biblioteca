@@ -205,79 +205,28 @@ namespace Biblioteca
 
         }
 
-        public void fazerFotografia(int texParede)
+        public void fazerFotografia()
         {
-            
             GL.Color3(Color.Gray);
-            //fazerParede(0, altura, 950, comprimentoEstudioFotografia, 2950);
-           // GL.Enable(EnableCap.Texture2D);
-           // GL.BindTexture(TextureTarget.Texture2D, texParede);
-           // GL.Begin(PrimitiveType.Quads);
-
-            // fazerParede(0, altura, 950, -400, 2945);
-
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, texParede);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1,0); GL.Vertex3(950, 2945, altura);
-            GL.TexCoord2(0,0); GL.Vertex3(550, 2945, altura);
-            GL.TexCoord2(0,1); GL.Vertex3(550, 2945, 0);
-            GL.TexCoord2(1,1); GL.Vertex3(950, 2945, 0);
-
-
-         //   GL.Begin(PrimitiveType.Quads);
-          //  GL.Vertex3(950, 1880, altura);
-           // GL.Vertex3(2230, 1880, altura);
-          //  GL.Vertex3(2230, 1880, 0);
-        //    GL.Vertex3(950, 1880, 0);
-    
-            GL.Color3(Color.Red);
-            //fazerParede(0, altura, 950, -400, 2945);
-            // fazerParede(0, altura, 950, -400, 2945);
-
-
-            // fazerParede(0, altura, 950, 1280, 1880);
-
-            //fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia - 100);
-
-
-
-            //  GL.Vertex3(950, 2945, altura);
-            // GL.Vertex3(550, 2945, altura);
-            //  GL.Vertex3(550, 2945, 0);
-            //  GL.Vertex3(950, 2945, 0);
-
-            //2945
-            // GL.Vertex3(1350, 1880, 0);
-            // GL.Vertex3(0, 1880, 0);
-            // GL.Vertex3(0, 1680, 0);
-            // GL.Vertex3(1350, 1680, 0);
-
-
-
-
-            //
-            //  fazerParede(0, altura, 950, -400, 2945);
-            // fazerParede(0, altura, 950, 1280, 1880);
-            //   fazerParede(0, altura, 950, -400, 1880);
-            //  GL.Color3(Color.Gray);
-            // fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia - 100);
-            // fazerParede(0, altura, 950 + comprimentoEstudioFotografia, 0, 1880, larguraEstudioFotografia);
+            fazerParede(0, altura, 950, comprimentoEstudioFotografia, 2945);
+            fazerParede(0, altura, 950, -400, 2945);
+            fazerParede(0, altura, 950, comprimentoEstudioFotografia, 1880);
+            fazerParede(0, altura, 950, -400, 1880);
+            GL.Color3(Color.Gray);
+            fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia - 100);
+            fazerParede(0, altura, 950 + comprimentoEstudioFotografia, 0, 1880, larguraEstudioFotografia);
 
             // Parede com Buraco
-            //      GL.Color3(Color.Yellow);
+            GL.Color3(Color.Yellow);
 
-            //      fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia-100);
+            fazerParede(0, altura, 950, 0, 1980, larguraEstudioFotografia-100);
 
             //Estudio//
-            //       GL.Color3(Color.Green);
-            //      fazerParede(0, altura, 750, 130, 2040);
-            //      fazerParede(0, altura, 750, 0 , 2040, 320);
-            //     fazerParede(0, altura, 750, 200, 2360);
+            GL.Color3(Color.Green);
+            fazerParede(0, altura, 750, 130, 2040);
+            fazerParede(0, altura, 750, 0 , 2040, 320);
+            fazerParede(0, altura, 750, 200, 2360);
 
-            GL.End();
-            GL.Disable(EnableCap.Texture2D);
         }
 
         public void FazerChaoComodos(int texGrama, int texPiso, int[] texPav)
@@ -298,6 +247,8 @@ namespace Biblioteca
             GL.TexCoord2(1f, 1f); GL.Vertex3(2230, 0, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
+
+            fazerChao(altura, altura, 0, recepLarg, 0, recepCompr);
 
             //Chao entre a recepção e o saguão
             GL.Enable(EnableCap.Texture2D);
@@ -322,6 +273,8 @@ namespace Biblioteca
             GL.TexCoord2(1f, 1f); GL.Vertex3(4110, 0, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
+
+            fazerChao(altura, altura, 2430, 1680, 1680, -1680);
 
             //Chao do Estudio
             GL.Enable(EnableCap.Texture2D);

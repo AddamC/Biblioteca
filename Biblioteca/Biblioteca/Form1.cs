@@ -81,17 +81,8 @@ namespace Biblioteca
             GL.Vertex3(0, 0, 0); GL.Vertex3(0, 0, 500);
             GL.End();
 
-            GL.Color3(Color.Gray);
-            GL.Begin(PrimitiveType.Quads);
-
-
-
-
-            GL.End();
             GL.Disable(EnableCap.Blend);
-
             
-
 
             //GL.Enable(EnableCap.Texture2D);
             //GL.BindTexture(TextureTarget.Texture2D, texPorta);
@@ -103,15 +94,15 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-          //  estrutura.fazerEntrada();
-           // estrutura.fazerAuditorio();
-          //  estrutura.fazerRecepcao();
-            estrutura.fazerFotografia(texParede);
-           // estrutura.fazerSaguao();
-          //  estrutura.fazerTV();
-          //  estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
+            estrutura.fazerEntrada();
+            estrutura.fazerAuditorio();
+            estrutura.fazerRecepcao();
+            estrutura.fazerFotografia();
+            estrutura.fazerSaguao();
+            estrutura.fazerTV();
+            estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
-            
+
 
             GL.Color3(Color.BlueViolet);
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 0,
