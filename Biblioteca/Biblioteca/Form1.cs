@@ -102,9 +102,9 @@ namespace Biblioteca
             //                        100, 200, 80, 220, 50, 70);
 
             //estrutura.fazerAuditorio();
-            estrutura.fazerRecepcao();
-            estrutura.fazerSaguao();
-            //estrutura.fazerFotografia();
+           // estrutura.fazerRecepcao();
+            //estrutura.fazerSaguao();
+            estrutura.fazerFotografia();
 
             //construcao.paredeBuraco(0, 300, 0, 0, 0, 300,
             //                        100, 200, 0, 0, 80, 220);

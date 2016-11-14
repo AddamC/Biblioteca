@@ -69,14 +69,9 @@ namespace Biblioteca
 
         }
 
-        public void fazerFotografia()
-        {
-            fazerParede(0, alturaFotografia, 0, comprimentoEstudio, 0);
-            fazerParede(0, alturaFotografia, 0, comprimentoEstudio, 1280);
-            // fazerParede(0, 100, 0, 645, 200);
-            // fazerParede(0, 100, 645, 0, 0, 200);
-            fazerParede(0, alturaFotografia, 0, 0, 0, larguraEstudio);
-            fazerParede(0, alturaFotografia, 1280, 0, 0, larguraEstudio);
+        public void fazerFotografia() {
+            //construcao.fazerEscada(12, 100, 200, 200, 200, 500, 500);
+           fazerEscada(12, 100, 200, 200, 200, 500, 500);
         }
     }
 }
