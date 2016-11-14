@@ -31,6 +31,7 @@ namespace Biblioteca
         int texGrama;
         int texPiso;
         int[] texPav = new int[2];
+        int texParede;
 
 
         public Form1()
@@ -49,6 +50,7 @@ namespace Biblioteca
             texPiso = LoadTexture("../../Recursos/Piso.jpg");
             texPav[0] = LoadTexture("../../Recursos/pavimento2.png");
             texPav[1] = LoadTexture("../../Recursos/pavimento.png");
+            texParede = LoadTexture("../../Recursos/parede.jpg");
             SetupViewport();                      //configura a janela de pintura
         }
 
@@ -101,13 +103,13 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-            estrutura.fazerEntrada();
-            estrutura.fazerAuditorio();
-            estrutura.fazerRecepcao();
-            estrutura.fazerFotografia();
-            estrutura.fazerSaguao();
-            estrutura.fazerTV();
-            estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
+          //  estrutura.fazerEntrada();
+           // estrutura.fazerAuditorio();
+          //  estrutura.fazerRecepcao();
+            estrutura.fazerFotografia(texParede);
+           // estrutura.fazerSaguao();
+          //  estrutura.fazerTV();
+          //  estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
             
 

@@ -94,6 +94,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Recursos\Grama.jpg" />
+    <Content Include="Recursos\parede.jpg" />
     <Content Include="Recursos\pavimento.png" />
     <Content Include="Recursos\Piso.jpg" />
     <Content Include="Recursos\portaFEMA.png" />
