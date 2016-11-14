@@ -26,6 +26,12 @@ namespace Biblioteca
         float valor = 0f;
         Estruturas estrutura = new Estruturas();
 
+        //Texturas
+        int texPorta;
+        int texGrama;
+        int texPiso;
+        int[] texPav = new int[2];
+
 
         public Form1()
         {
@@ -34,14 +40,16 @@ namespace Biblioteca
 
         private void glControl1_Load(object sender, EventArgs e)
         {
-            GL.ClearColor(Color.GhostWhite);         // definindo a cor de limpeza do fundo da tela
+            GL.ClearColor(Color.Black);         // definindo a cor de limpeza do fundo da tela
             GL.Enable(EnableCap.Light0);
-
+            
             //texTelhado = LoadTexture("../../textura/telhado.jpg");
-            //texPorta = LoadTexture("../../textura/portajanela.jpg");
-            //texGrama = LoadTexture("../../textura/grama.jpg");
+            texPorta = LoadTexture("../../Recursos/portaFEMA.png");
+            texGrama = LoadTexture("../../Recursos/Grama.jpg");
+            texPiso = LoadTexture("../../Recursos/Piso.jpg");
+            texPav[0] = LoadTexture("../../Recursos/pavimento2.png");
+            texPav[1] = LoadTexture("../../Recursos/pavimento.png");
             SetupViewport();                      //configura a janela de pintura
-
         }
 
         private void glControl1_Paint(object sender, PaintEventArgs e)
@@ -80,35 +88,28 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Blend);
 
-            //EXEMPLO DE OBJETO TRANSPARENTE
-            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
-            GL.Enable(EnableCap.Blend);
-            GL.Color4(0.1f, 0.5f, 0.6f, 0.6f); //Último parâmetro é a porcentagem de trasparência
+            
 
-            GL.Begin(PrimitiveType.Quads);
-            GL.Vertex3(-80, 50, 0);
-            GL.Vertex3(-80, 100, 0);
-            GL.Vertex3(-80, 100, 50);
-            GL.Vertex3(-80, 50, 50);
-            GL.End();
 
-            //construcao.fazerParede(0, 100, 0, 0, 0, 100);
-            //construcao.fazerParede(0, 100, 0, 200, 0, 0);
-            //construcao.fazerChao2(100, 100, 0, 500, 0, 500);
-            //construcao.paredeBuraco(0, 200, 0, 500, 0, 500, 50, 150, 0, 50, 0, 100);
+            //GL.Enable(EnableCap.Texture2D);
+            //GL.BindTexture(TextureTarget.Texture2D, texPorta);
+            //GL.Color3(Color.Transparent);
+            //GL.Begin(PrimitiveType.Quads);
+            //GL.TexCoord2(213f / 819f, 57f / 460f); GL.Vertex3(100, 0, 140);
+            //GL.TexCoord2(463f / 819f, 57f / 460f); GL.Vertex3(250, 0, 140);
+            //GL.TexCoord2(213f / 819f, 412f / 460f); GL.Vertex3(250, 0, 60);
+            //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
+            //GL.End();
 
-            //GL.Color3(Color.Gray);
-            //construcao.paredeBuraco(0, 300, 0, 300, 0, 100,
-            //                        100, 200, 80, 220, 50, 70);
-
-            //estrutura.fazerAuditorio();
-           // estrutura.fazerRecepcao();
-            //estrutura.fazerSaguao();
+            estrutura.fazerEntrada();
+            estrutura.fazerAuditorio();
+            estrutura.fazerRecepcao();
             estrutura.fazerFotografia();
+            estrutura.fazerSaguao();
+            estrutura.fazerTV();
+            estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
-            //construcao.paredeBuraco(0, 300, 0, 0, 0, 300,
-            //                        100, 200, 0, 0, 80, 220);
-
+            
 
             GL.Color3(Color.BlueViolet);
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 0,
@@ -120,6 +121,9 @@ namespace Biblioteca
 
             glControl1.SwapBuffers(); //troca os buffers de frente e de fundo 
 
+            txtDirX.Text = Convert.ToInt16(dir.X).ToString();
+            txtDirY.Text = Convert.ToInt16(dir.Y).ToString();
+            txtDirZ.Text = Convert.ToInt16(dir.Z).ToString();
         }
         private void SetupViewport() //configura a janela de projeção 
         {
@@ -204,15 +208,16 @@ namespace Biblioteca
             int tipoTecla = 0;
             int sinal = 1;
 
-            if (e.KeyCode == Keys.M)
+            if (e.KeyCode == Keys.Q)
             {
                 valor += 10;
-
+                pos.Z += 100;
                 glControl1.Invalidate();
             }
-            if (e.KeyCode == Keys.N)
+            if (e.KeyCode == Keys.E)
             {
                 valor -= 10;
+                pos.Z -= 100;
                 glControl1.Invalidate();
             }
             if (e.KeyCode == Keys.A)
@@ -238,12 +243,12 @@ namespace Biblioteca
                 tipoTecla = 1;
             }
 
-            if (e.KeyCode == Keys.E)
+            if (e.KeyCode == Keys.Right)
             {
                 a += 3;
                 tipoTecla = 2;
             }
-            if (e.KeyCode == Keys.Q)
+            if (e.KeyCode == Keys.Left)
             {
                 a -= 3;
                 tipoTecla = 2;
@@ -265,9 +270,9 @@ namespace Biblioteca
                 if (a < 0) a += 360;
                 if (a > 360) a -= 360;
                 //label2.Text = lateral.ToString();
-                pos.X += (Math.Sin(a * Math.PI / 180) * 10);
-                pos.Y += (Math.Cos(a * Math.PI / 180) * 10);
-                pos.Z += (Math.Sin(camera_rotation2 * Math.PI / 180) * 10) * sinal;
+                pos.X += (Math.Sin(a * Math.PI / 180) * 100);
+                pos.Y += (Math.Cos(a * Math.PI / 180) * 100);
+                pos.Z += (Math.Sin(camera_rotation2 * Math.PI / 180) * 100) * sinal;
                 calcula_direcao();
                 glControl1.Invalidate();
             }
@@ -278,6 +283,10 @@ namespace Biblioteca
                 calcula_direcao();
                 glControl1.Invalidate();
             }
+            txtPosX.Text = Convert.ToInt16(pos.X).ToString();
+            txtPosY.Text = Convert.ToInt16(pos.Y).ToString();
+            txtPosZ.Text = Convert.ToInt16(pos.Z).ToString();
+
         }
 
         private void glControl1_Resize(object sender, EventArgs e)
@@ -286,11 +295,6 @@ namespace Biblioteca
             //glControl1.Height = Form1.ActiveForm.Height - 10;
             SetupViewport();
             glControl1.Invalidate();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
