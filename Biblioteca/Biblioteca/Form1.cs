@@ -93,7 +93,7 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Blend);
 
-            
+
 
 
             //GL.Enable(EnableCap.Texture2D);
@@ -106,15 +106,15 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-             estrutura.fazerEntrada();
-            estrutura.fazerAuditorio();
+            estrutura.fazerEntrada();
+            estrutura.fazerAuditorio(texParede, texPortaFoto);
             estrutura.fazerRecepcao(texParede);
             estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
             estrutura.fazerSaguao();
-            estrutura.fazerTV();
+            estrutura.fazerTV(texParede, texPortaFoto);
             estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
-            
+
 
             GL.Color3(Color.BlueViolet);
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 0,
@@ -300,6 +300,11 @@ namespace Biblioteca
             //glControl1.Height = Form1.ActiveForm.Height - 10;
             SetupViewport();
             glControl1.Invalidate();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
