@@ -119,7 +119,7 @@ namespace Biblioteca
             estrutura.fazerTV();
             estrutura.FazerChaoComodos(texGrama, texPiso, texPav, texParede);
 
-
+            //batata
 
             GL.Color3(Color.BlueViolet);
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 0,
