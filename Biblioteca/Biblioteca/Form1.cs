@@ -54,6 +54,7 @@ namespace Biblioteca
             texParede = LoadTexture("../../Recursos/fotografia.jpg");
             texPortaFoto = LoadTexture("../../Recursos/PortaFotografia.png");
             texChaoFoto = LoadTexture("../../Recursos/chaoFotografia.jpg");
+            texPiso = LoadTexture("../../Recursos/Piso.jpg");
             SetupViewport();                      //configura a janela de pintura
         }
 
@@ -93,7 +94,7 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Blend);
 
-
+            
 
 
             //GL.Enable(EnableCap.Texture2D);
@@ -106,15 +107,15 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-            estrutura.fazerEntrada();
-            estrutura.fazerAuditorio(texParede, texPortaFoto);
-            estrutura.fazerRecepcao(texParede);
-            estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
-            estrutura.fazerSaguao();
-            estrutura.fazerTV(texParede, texPortaFoto);
-            estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
+          estrutura.fazerEntrada();
+         estrutura.fazerAuditorio();
+         // estrutura.fazerRecepcao(texParede);
+        //  estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
+         // estrutura.fazerSaguao(texParede);
+       //   estrutura.fazerTV();
+          estrutura.FazerChaoComodos(texGrama, texPiso, texPav,texParede);
 
-
+            
 
             GL.Color3(Color.BlueViolet);
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 0,
@@ -300,11 +301,6 @@ namespace Biblioteca
             //glControl1.Height = Form1.ActiveForm.Height - 10;
             SetupViewport();
             glControl1.Invalidate();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
