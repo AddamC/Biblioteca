@@ -112,11 +112,11 @@ namespace Biblioteca
             //GL.End();
 
             estrutura.fazerEntrada();
-            estrutura.fazerAuditorio();
+            estrutura.fazerAuditorio(texParede, texPortaFoto);
             estrutura.fazerRecepcao(texParede);
             estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
             estrutura.fazerSaguao(texParede);
-            estrutura.fazerTV();
+            estrutura.fazerTV(texParede, texPortaFoto);
             estrutura.FazerChaoComodos(texGrama, texPiso, texPav, texParede);
 
             //batatasadasd

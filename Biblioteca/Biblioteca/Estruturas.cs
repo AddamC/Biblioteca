@@ -82,25 +82,46 @@ namespace Biblioteca
             //GL.Color3(Color.Green);
             //fazerChao(0, 0, -1000, 1000, -100, 635);
         }
-        public void fazerAuditorio()//pular distancia corredor
+        public void fazerAuditorio(int texParede, int texPorta)//pular distancia corredor
         {
+            GL.Color3(Color.WhiteSmoke);
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texParede);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(0, 5); GL.Vertex3(-2225, 1940, altura);
+            GL.TexCoord2(0, 0); GL.Vertex3(-2225, 3090, altura);
+            GL.TexCoord2(5, 0); GL.Vertex3(-1125, 3090, altura);
+            GL.TexCoord2(5, 5); GL.Vertex3(-1125, 1940, altura);
+            GL.End();
+            GL.Disable(EnableCap.Blend); //FIM DA TEXTURA DO TETO
             GL.Color3(Color.SlateBlue);
             //parede + porta superior          
-            fazerParede(0, altura, -2225, largAnfiteatro-661, 3090);//esquerda da porta
-            fazerParede(270, altura, -2225, largAnfiteatro-201, 3090);//porta
-            fazerParede(0, altura, -1546, largAnfiteatro-679, 3090);//direita da porta
+            paredeTextura(0, altura, -2225, largAnfiteatro - 661, 3090, texParede);//fazerParede(0, altura, -2225, largAnfiteatro-661, 3090);//esquerda da porta
+            paredeTextura(270, altura, -2225, largAnfiteatro - 201, 3090, texParede);//fazerParede(270, altura, -2225, largAnfiteatro-201, 3090);//porta
+            paredeTextura(0, altura, -1546, largAnfiteatro - 679, 3090, texParede);//fazerParede(0, altura, -1546, largAnfiteatro-679, 3090);//direita da porta
+                        //Porta 1
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPorta);
+            GL.Color3(Color.White);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(0, 0); GL.Vertex3(-1125, 2195, portAltura + 60);
+            GL.TexCoord2(0, 1); GL.Vertex3(-1125, 2195, 0);
+            GL.TexCoord2(1, 1); GL.Vertex3(-1125, 2355, 0);
+            GL.TexCoord2(1, 0); GL.Vertex3(-1125, 2355, portAltura + 60);
+            GL.End();
+            GL.Disable(EnableCap.Blend);
             //
             GL.Color3(Color.PowderBlue);
-            fazerParede(0, altura, -2225, largAnfiteatro, 1940);//inferior
-            fazerParede(0, altura, -2225, 0, compAnfiteatro, 1150);//esquerda
+            paredeTextura(0, altura, -2225, largAnfiteatro, 1940, texParede);//fazerParede(0, altura, -2225, largAnfiteatro, 1940);//inferior
+            paredeTextura(0, altura, -2225, 0, compAnfiteatro, 1150, texParede);//fazerParede(0, altura, -2225, 0, compAnfiteatro, 1150);//esquerda
 
             //parede interior traseira
-           
+
             GL.Color3(Color.Black);
             //fazerParede(0, altura, -1325, -400, compAnfiteatro, 400);//teste de reta
             //GL.Color3(Color.Yellow);//teste
-            fazerParede(0, altura, -2225, 140, compAnfiteatro + 400, -140);//esquerda
-            fazerParede(0, altura, -1825, -140, compAnfiteatro, 140);
+            paredeTextura(0, altura, -2225, 140, compAnfiteatro + 400, -140, texParede);//fazerParede(0, altura, -2225, 140, compAnfiteatro + 400, -140);//esquerda
+            paredeTextura(0, altura, -1825, -140, compAnfiteatro, 140, texParede);//fazerParede(0, altura, -1825, -140, compAnfiteatro, 140);
 
             /*/telhado Anfiteatro
             fazerChao(altura, altura, -1725, largAnfiteatro, 1882, largAnfiteatro);
@@ -108,9 +129,9 @@ namespace Biblioteca
 
             GL.Color3(Color.Turquoise);
             //parede + porta direita
-            fazerParede(0, altura, -1125, 0, compAnfiteatro, 255);//esquerda da porta
-            fazerParede(270, altura, -1125, 0, compAnfiteatro + 255, 160); //porta
-            fazerParede(0, altura, -1125, 0, compAnfiteatro + 415, 735);//direita da porta
+            paredeTextura(0, altura, -1125, 0, compAnfiteatro, 255, texParede);//fazerParede(0, altura, -1125, 0, compAnfiteatro, 255);//esquerda da porta
+            paredeTextura(270, altura, -1125, 0, compAnfiteatro + 255, 160, texParede);//fazerParede(270, altura, -1125 , 0, compAnfiteatro+255, 160); //porta
+            paredeTextura(0, altura, -1125, 0, compAnfiteatro + 415, 735, texParede);// fazerParede(0, altura, -1125, 0, compAnfiteatro+415, 735);//direita da porta
             //
             //degraus
             GL.Color3(Color.Black);
@@ -207,42 +228,96 @@ namespace Biblioteca
             paredeTextura(0, altura, 2430, 0, 1680, -570, texParede); //  fazerParede(0, altura, 2430, 0, 1680, -570);
 
         }
-        public void fazerTV()
+        public void fazerTV(int texParede, int texPorta)
         {
             GL.Color3(Color.DodgerBlue);
             //         (hi,     hf,  xi,  xf, yi,   if)
-            fazerParede(0, altura, -distRecepTV, 0, 800, tamMenorTV);//parede leste
+            paredeTextura(0, altura, -distRecepTV, 0, 800, tamMenorTV, texParede); //fazerParede(0, altura, -distRecepTV, 0, 800, tamMenorTV);//parede leste
 
             //parede sul
-            fazerParede(0, 270, -distRecepTV, -45, 800);
-            fazerParede(0, 270, -distRecepTV - 145, -tamMaiorTV - tamProd + 145, 800);
-            fazerParede(270, altura, -distRecepTV, -tamMaiorTV, 800);//parte superior sul
+            paredeTextura(0, 270, -distRecepTV, -45, 800, texParede); //fazerParede(0, 270, -distRecepTV, -45, 800);
+            paredeTextura(0, 270, -distRecepTV - 145, -tamMaiorTV - tamProd + 145, 800, texParede); //fazerParede(0, 270, -distRecepTV - 145, -tamMaiorTV - tamProd + 145, 800);
+            paredeTextura(270, altura, -distRecepTV, -tamMaiorTV, 800, texParede); // fazerParede(270, altura, -distRecepTV, -tamMaiorTV, 800);//parte superior sul
             GL.Color3(Color.DodgerBlue);
-            fazerParede(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0); //superior sul sala producao
+            paredeTextura(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0, texParede); //fazerParede(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0); //superior sul sala producao
 
             GL.Color3(Color.LightSteelBlue);
-            fazerParede(0, altura, -distRecepTV - tamMaiorTV, 0, 800, 385);//parede interior curta
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV, 0, 800, 385, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV, 0, 800, 385);//parede interior curta
             GL.Color3(Color.MediumAquamarine);
-            fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800, tamMenorTV);//parede oeste
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800, tamMenorTV, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800, tamMenorTV);//parede oeste
             GL.Color3(Color.Gray);
-            fazerParede(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV); //parede norte tv
-            fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, -tamProd + 100, 800 + tamMenorTV);
-            fazerParede(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -165);
-            fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, 0, 800 + tamMenorTV, -165);
+            paredeTextura(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV, texParede);//fazerParede(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV); //parede norte tv
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV - 100, -tamProd + 100, 800 + tamMenorTV, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, -tamProd + 100, 800 + tamMenorTV);
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -165, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -165);
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV - 100, 0, 800 + tamMenorTV, -165, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, 0, 800 + tamMenorTV, -165);
 
+                        //TETO TV-MENOR
+            GL.Color3(Color.White);
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texParede);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(0, 5); GL.Vertex3(-2225, 1940, altura);
+            GL.TexCoord2(0, 0); GL.Vertex3(-2225, 1390, altura);
+            GL.TexCoord2(5, 0); GL.Vertex3(-1125, 1390, altura);
+            GL.TexCoord2(5, 5); GL.Vertex3(-1125, 1940, altura);
+            GL.End();
+            
+                        //PORTA TV-MENOR
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPorta);
+            GL.Color3(Color.White);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(0, 0); GL.Vertex3(-1680, 1510, portAltura + 60);
+            GL.TexCoord2(0, 1); GL.Vertex3(-1680, 1510, 0);
+            GL.TexCoord2(1, 1); GL.Vertex3(-1550, 1510, 0);
+            GL.TexCoord2(1, 0); GL.Vertex3(-1550, 1510, portAltura + 60);
+            GL.End();
+            GL.Disable(EnableCap.Blend);
+                        //PORTA TV-MAIOR
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPorta);
+            GL.Color3(Color.White);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(0, 0); GL.Vertex3(-1680 - 100, 1390, portAltura + 60);
+            GL.TexCoord2(0, 1); GL.Vertex3(-1680 - 100, 1390, 0);
+            GL.TexCoord2(1, 1); GL.Vertex3(-1550 - 120, 1390, 0);
+            GL.TexCoord2(1, 0); GL.Vertex3(-1550 - 120, 1390, portAltura + 60); //porta menor devido a parede ta mt grande
+            GL.End();
+            GL.Disable(EnableCap.Blend);
+                        //PORTA ENTRADA
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, texPorta);
+            GL.Color3(Color.White);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(0, 0); GL.Vertex3(-1125, 1390, portAltura + 60);
+            GL.TexCoord2(0, 1); GL.Vertex3(-1125, 1390, 0);
+            GL.TexCoord2(1, 1); GL.Vertex3(-1125, 1510, 0);
+            GL.TexCoord2(1, 0); GL.Vertex3(-1125, 1510, portAltura + 60); //porta menor devido a parede ta mt grande
+            GL.End();
+            GL.Disable(EnableCap.Blend);
 
+            //TETO TV-MAIOR
+            GL.Color3(Color.White);
+            GL.BindTexture(TextureTarget.Texture2D, texParede);
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(0, 5); GL.Vertex3(-2225, 1390, altura);
+            GL.TexCoord2(0, 0); GL.Vertex3(-2225, 800, altura);
+            GL.TexCoord2(5, 0); GL.Vertex3(-550, 800, altura);
+            GL.TexCoord2(5, 5); GL.Vertex3(-550, 1390, altura);
+            GL.End();
+            GL.Disable(EnableCap.Blend);
 
             GL.Color3(Color.BlueViolet);
-            fazerParede(0, altura, -distRecepTV - 575, -425, 800 + tamMenorTV + 120);
-            fazerParede(0, altura, -distRecepTV - tamMaiorTV, -275, 800 + tamMenorTV + 120);
-            fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800+tamMenorTV,550);
+            paredeTextura(0, altura, -distRecepTV - 575, -425, 800 + tamMenorTV + 120, texParede); //fazerParede(0, altura, -distRecepTV - 575, -425, 800 + tamMenorTV + 120);
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV, -275, 800 + tamMenorTV + 120, texParede);// fazerParede(0, altura, -distRecepTV - tamMaiorTV, -275, 800 + tamMenorTV + 120);
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800 + tamMenorTV, 550, texParede);// fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800+tamMenorTV,550);
 
-            fazerParede(0, altura, -distRecepTV - 575, 0, 800 + tamMenorTV + 120, 550 - 120);
-            fazerParede(0, altura, -distRecepTV - 575, -550, 800 + tamMenorTV + 550);
+            paredeTextura(0, altura, -distRecepTV - 575, 0, 800 + tamMenorTV + 120, 550 - 120, texParede);//fazerParede(0, altura, -distRecepTV - 575, 0, 800 + tamMenorTV + 120, 550 - 120);
+            paredeTextura(0, altura, -distRecepTV - 575, -550, 800 + tamMenorTV + 550,texParede);// fazerParede(0, altura, -distRecepTV - 575, -550, 800 + tamMenorTV + 550);
 
-            fazerParede(0, altura, -distRecepTV - 575 - 550, 0, 800 + tamMenorTV + 550, -550 + 120);
+            paredeTextura(0, altura, -distRecepTV - 575 - 550, 0, 800 + tamMenorTV + 550, -550 + 120, texParede);// fazerParede(0, altura, -distRecepTV - 575 - 550, 0, 800 + tamMenorTV + 550, -550 + 120);
 
-            fazerParede(0, altura, -distRecepTV - 575 - 550, -tamProd, 800 + tamMenorTV+ 550 );
+            paredeTextura(0, altura, -distRecepTV - 575 - 550, -tamProd, 800 + tamMenorTV + 550, texParede);// fazerParede(0, altura, -distRecepTV - 575 - 550, -tamProd, 800 + tamMenorTV+ 550 );
 
 
         }

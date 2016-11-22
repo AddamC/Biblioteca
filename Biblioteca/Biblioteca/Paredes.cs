@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 
-namespace Biblioteca
+namespace Biblioteca    
 {
     public abstract class Paredes
     {
