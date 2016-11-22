@@ -61,8 +61,7 @@ namespace Biblioteca
             GL.Color3(Color.Red);
             fazerChao(0, 0, -850, 850, 534, 266 );
 
-            GL.Color3(Color.Green);
-            fazerChao(0, 0, -1000, 1000, -100, 635);
+            
         }
         public void fazerAuditorio()//pular distancia corredor
         {
@@ -256,6 +255,9 @@ namespace Biblioteca
             GL.Color3(Color.LightGray);
             fazerChao(0, 0, 950, comprimentoEstudioFotografia, 1880, larguraEstudioFotografia);
 
+            //Jardim Frente
+            GL.Color3(Color.Green);
+            fazerChao(0, 0, -1000, 1000, -100, 635);
 
         }
 
