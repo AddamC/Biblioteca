@@ -40,12 +40,16 @@ namespace Biblioteca
         {
             InitializeComponent();
         }
+        public void Form1_Load()
+        {
+
+        }
 
         private void glControl1_Load(object sender, EventArgs e)
         {
             GL.ClearColor(Color.Black);         // definindo a cor de limpeza do fundo da tela
             GL.Enable(EnableCap.Light0);
-            
+
             //texTelhado = LoadTexture("../../textura/telhado.jpg");
             texPorta = LoadTexture("../../Recursos/portaFEMA.png");
             texGrama = LoadTexture("../../Recursos/Grama.jpg");
@@ -94,7 +98,7 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Blend);
 
-            
+
 
 
             //GL.Enable(EnableCap.Texture2D);
@@ -107,15 +111,15 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-          estrutura.fazerEntrada();
-         estrutura.fazerAuditorio();
-         // estrutura.fazerRecepcao(texParede);
-        //  estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
-         // estrutura.fazerSaguao(texParede);
-       //   estrutura.fazerTV();
-          estrutura.FazerChaoComodos(texGrama, texPiso, texPav,texParede);
+            estrutura.fazerEntrada();
+            estrutura.fazerAuditorio();
+            estrutura.fazerRecepcao(texParede);
+            estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
+            estrutura.fazerSaguao(texParede);
+            estrutura.fazerTV();
+            estrutura.FazerChaoComodos(texGrama, texPiso, texPav, texParede);
 
-            
+
 
             GL.Color3(Color.BlueViolet);
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 0,
