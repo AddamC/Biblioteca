@@ -26,7 +26,14 @@ namespace Biblioteca
         float valor = 0f;
         Estruturas estrutura = new Estruturas();
 
+        //Texturas
         int texPorta;
+        int texGrama;
+        int texPiso;
+        int[] texPav = new int[2];
+        int texParede;
+        int texPortaFoto;
+        int texChaoFoto;
 
 
         public Form1()
@@ -36,14 +43,18 @@ namespace Biblioteca
 
         private void glControl1_Load(object sender, EventArgs e)
         {
-            GL.ClearColor(Color.GhostWhite);         // definindo a cor de limpeza do fundo da tela
+            GL.ClearColor(Color.Black);         // definindo a cor de limpeza do fundo da tela
             GL.Enable(EnableCap.Light0);
-
+            
             //texTelhado = LoadTexture("../../textura/telhado.jpg");
             texPorta = LoadTexture("../../Recursos/portaFEMA.png");
-            //texGrama = LoadTexture("../../textura/grama.jpg");
+            texGrama = LoadTexture("../../Recursos/Grama.jpg");
+            texPav[0] = LoadTexture("../../Recursos/pavimento2.png");
+            texPav[1] = LoadTexture("../../Recursos/pavimento.png");
+            texParede = LoadTexture("../../Recursos/fotografia.jpg");
+            texPortaFoto = LoadTexture("../../Recursos/PortaFotografia.png");
+            texChaoFoto = LoadTexture("../../Recursos/chaoFotografia.jpg");
             SetupViewport();                      //configura a janela de pintura
-
         }
 
         private void glControl1_Paint(object sender, PaintEventArgs e)
@@ -82,18 +93,8 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Blend);
 
-            //EXEMPLO DE OBJETO TRANSPARENTE
-            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
-            GL.Enable(EnableCap.Blend);
-            GL.Color4(0.1f, 0.5f, 0.6f, 0.6f); //Último parâmetro é a porcentagem de trasparência
-
-            GL.Begin(PrimitiveType.Quads);
-            GL.Vertex3(-80, 50, 0);
-            GL.Vertex3(-80, 100, 0);
-            GL.Vertex3(-80, 100, 50);
-            GL.Vertex3(-80, 50, 50);
-            GL.End();
             
+
 
             //GL.Enable(EnableCap.Texture2D);
             //GL.BindTexture(TextureTarget.Texture2D, texPorta);
@@ -105,13 +106,13 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-            estrutura.fazerEntrada();
+             estrutura.fazerEntrada();
             estrutura.fazerAuditorio();
-            estrutura.fazerRecepcao();
-            estrutura.fazerFotografia();
+            estrutura.fazerRecepcao(texParede);
+            estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
             estrutura.fazerSaguao();
             estrutura.fazerTV();
-            estrutura.FazerChaoComodos();
+            estrutura.FazerChaoComodos(texGrama, texPiso, texPav);
 
             
 
@@ -125,6 +126,9 @@ namespace Biblioteca
 
             glControl1.SwapBuffers(); //troca os buffers de frente e de fundo 
 
+            //txtDirX.Text = Convert.ToInt16(dir.X).ToString();
+            //txtDirY.Text = Convert.ToInt16(dir.Y).ToString();
+            //txtDirZ.Text = Convert.ToInt16(dir.Z).ToString();
         }
         private void SetupViewport() //configura a janela de projeção 
         {
@@ -209,15 +213,16 @@ namespace Biblioteca
             int tipoTecla = 0;
             int sinal = 1;
 
-            if (e.KeyCode == Keys.M)
+            if (e.KeyCode == Keys.Q)
             {
                 valor += 10;
-
+                pos.Z += 100;
                 glControl1.Invalidate();
             }
-            if (e.KeyCode == Keys.N)
+            if (e.KeyCode == Keys.E)
             {
                 valor -= 10;
+                pos.Z -= 100;
                 glControl1.Invalidate();
             }
             if (e.KeyCode == Keys.A)
@@ -243,12 +248,12 @@ namespace Biblioteca
                 tipoTecla = 1;
             }
 
-            if (e.KeyCode == Keys.E)
+            if (e.KeyCode == Keys.Right)
             {
                 a += 3;
                 tipoTecla = 2;
             }
-            if (e.KeyCode == Keys.Q)
+            if (e.KeyCode == Keys.Left)
             {
                 a -= 3;
                 tipoTecla = 2;
@@ -283,6 +288,10 @@ namespace Biblioteca
                 calcula_direcao();
                 glControl1.Invalidate();
             }
+            //txtPosX.Text = Convert.ToInt16(pos.X).ToString();
+            //txtPosY.Text = Convert.ToInt16(pos.Y).ToString();
+            //txtPosZ.Text = Convert.ToInt16(pos.Z).ToString();
+
         }
 
         private void glControl1_Resize(object sender, EventArgs e)
