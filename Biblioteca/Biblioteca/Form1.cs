@@ -118,6 +118,8 @@ namespace Biblioteca
             estrutura.fazerSaguao(texParede);
             estrutura.fazerTV(texParede, texPortaFoto);
             estrutura.FazerChaoComodos(texGrama, texPiso, texPav, texParede);
+            estrutura.fazerRecep2(texParede, texPiso ,texPortaFoto);
+            estrutura.fazerSala1(texParede, texPiso, texPortaFoto);
 
             //batatasadasd
 

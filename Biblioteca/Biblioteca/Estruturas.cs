@@ -140,6 +140,54 @@ namespace Biblioteca
             
 
         }
+        public void fazerRecep2(int texParede,int texPiso, int textPortaFoto)
+        {
+            //PAREDES
+            GL.Color3(Color.DarkOrange);
+            paredeTextura(0, altura, 0, 550, 1681,texParede);//fazerParede(0, altura , 0, 550, 1681);//parede baixo
+            paredeTextura(0, altura, 200, 350, 2080, texParede); //fazerParede(0, altura , 200, 350, 2080); //aprece cima c/porta
+            paredeTextura(400, altura, 0, 200, 2080, texParede);//fazerParede(400, altura, 0, 200, 2080);//porta para sala1
+            paredeTextura(0, altura / 5, 550, 0, 1681, 200, texParede);//fazerParede(0, altura/5, 550, 0, 1681, 200);//rever Oque tem aqui
+            paredeTextura(0, altura, 0, 0, 1881, 200, texParede);//fazerParede(0, altura, 0, 0, 1881, 200);//direita da porta
+            paredeTextura(400, altura, 0, 0, 1681, 200, texParede);//fazerParede(400, altura, 0, 0, 1681, 200);//porta direita
+            //
+            //PORTAS
+            portaTextura(0, 400, 0, 0, 1681, 200, textPortaFoto);
+            //
+            //TETO
+            chaoTextura(altura, altura, 0, 550, 1681, 400, texParede);
+            //
+            //CHAO
+            GL.Color3(Color.Transparent);
+            chaoTextura(0, 0, 0, 550, 1880, 200, texPiso);
+            //
+
+        }
+        public void fazerSala1(int texParede, int texPiso, int textPortaFoto)
+        {
+            //PAREDES
+            GL.Color3(Color.IndianRed);
+            paredeTextura(400, altura, 0, 200, 2081, texParede);//fazerParede(0, altura , 0, 550, 1681);//parede baixo
+            paredeTextura(0, altura, 200, 350, 2081, texParede);//fazerParede(0, altura , 0, 550, 1681);//parede baixo
+            paredeTextura(0, altura, 0, 350, 2480, texParede); //fazerParede(0, altura , 200, 350, 2080); //aprece cima c/porta
+            paredeTextura(400, altura, 350, 200, 2480, texParede);//fazerParede(400, altura, 0, 200, 2080);//porta para sala1           
+            paredeTextura(0, altura, 0, 0, 2081, 399, texParede);//fazerParede(0, altura, 0, 0, 1881, 200);//direita da porta  
+            // 
+            //PORTAS        
+            portaTextura(0, 400, 350, 200, 2480, 0, textPortaFoto);
+            portaTextura(0, 400, 0, 200, 2080, 0, textPortaFoto);
+            //
+            //TETO
+            chaoTextura(altura, altura, 0, 550, 2080, 400, texParede);
+            //
+            //CHAO
+            GL.Color3(Color.Transparent);
+            chaoTextura(0, 0, 0, 550, 2080, 400, texPiso);
+            //
+
+
+        }
+
 
         public void fazerRecepcao(int texParede) //pular distancia do jardim
         {
@@ -467,6 +515,7 @@ namespace Biblioteca
             GL.TexCoord2(1f, 1f); GL.Vertex3(-550, 800, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
+
 
             //Jardim parte de baixo
             GL.Enable(EnableCap.Texture2D);
