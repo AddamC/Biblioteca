@@ -187,35 +187,27 @@ namespace Biblioteca
 
 
         }
-
-
         public void fazerRecepcao(int texParede) //pular distancia do jardim
         {
 
-            GL.Color3(Color.DarkSeaGreen);
+            GL.Color3(Color.DimGray);
             paredeBuraco(0, altura, 0, 0, 0, recepCompr,
-                         0, 400, 0, 0, 801, recepCompr - 435);
+                            0, 400, 0, 0, 801, recepCompr - 435);
 
             //fazerParede(270,300,0,0,0,recepCompr);
             //fazerParede(0, 270, 0, 0, 0, 801);
             //fazerParede(0, 270, 0, 0, recepCompr - 435, 435); 1245, 1680 - comprBuraco
 
             GL.Color3(Color.Black);
-          fazerParede(260, 270, 0, 0, 801, 445);
+            fazerParede(260, 270, 0, 0, 801, 445);
 
-            GL.Color4(0.5f, 0.5f, 0.5f, 0.7f);
-              fazerParede(270, 400, 0, 0, 801, 445);
-
-              fazerParede(0, 270, 0, 0, 801, 80);
-
-            fazerParede(0, 270, 0, 0, 1246 - 80, 80); //1436 = buracoYf
 
 
             GL.Color3(Color.LightBlue);
             paredeTextura(0, altura, 0, recepLarg, 0, 0, texParede);
             paredeTextura(0, altura, 0, recepLarg, recepCompr, 0, texParede);
 
-            GL.Color3(Color.PaleVioletRed);
+            GL.Color3(Color.LightSlateGray);
             paredeTextura(0, altura, 0, largBanheiro - portaBanheiro, recepCompr - 435, 0, texParede); //fazerParede(0, altura, 0, largBanheiro - portaBanheiro, recepCompr - 435, 0);
 
 
@@ -227,10 +219,10 @@ namespace Biblioteca
 
             paredeTextura(0, 100, 550 + porta, 550 - porta, 534, 0, texParede); //fazerParede(0, 100, 550 + porta, 550 - porta, 534, 0); //balcao
 
-            paredeTextura(0, 300, 1365, 600, 534, 0, texParede); //fazerParede(0, 300, 1365, 600, 534, 0); //parede depois do balcao no meio da recepção
+            paredeTextura(0, altura, 1365, 600, 534, 0, texParede); //fazerParede(0, 300, 1365, 600, 534, 0); //parede depois do balcao no meio da recepção
 
 
-            GL.Color3(Color.DarkGoldenrod);
+            GL.Color3(Color.LightGray);
             paredeTextura(0, altura, portaBanheiro + largBanheiro2, 0, recepCompr - 435, 435, texParede); // fazerParede(0, altura, portaBanheiro + largBanheiro2, 0, recepCompr - 435, 435);
 
             paredeTextura(0, altura, 2 * portaBanheiro + 2 * largBanheiro2, 0, recepCompr - 560, 560, texParede); //  fazerParede(0, altura, 2 * portaBanheiro + 2 * largBanheiro2, 0, recepCompr - 560, 560);
@@ -240,8 +232,9 @@ namespace Biblioteca
             paredeTextura(0, altura, 550, 0, 0, 534,texParede); // fazerParede(0, altura, 550, 0, 0, 534);
 
             paredeTextura(0, 100, 1100, 0, 534, 550,texParede); //fazerParede(0, 100, 1100, 0, 534, 550); //balcao
+            paredeTextura(0, 100, 680, 0, 534, 450,texParede);
 
-            GL.Color3(Color.DarkSlateBlue);
+            GL.Color3(Color.DarkGray);
             paredeTextura(0, altura, portaBanheiro, largBanheiro2, recepCompr - 315, 0,texParede); //fazerParede(0, altura, portaBanheiro, largBanheiro2, recepCompr - 315, 0); //banheiro 1
             paredeTextura(0, altura, 2 * portaBanheiro + largBanheiro2, largBanheiro2, recepCompr - 315, 0,texParede); //             fazerParede(0, altura, 2 * portaBanheiro + largBanheiro2, largBanheiro2, recepCompr - 315, 0); //banheiro 2
 
@@ -288,6 +281,8 @@ namespace Biblioteca
             paredeTextura(270, altura, -distRecepTV, -tamMaiorTV, 800, texParede); // fazerParede(270, altura, -distRecepTV, -tamMaiorTV, 800);//parte superior sul
             GL.Color3(Color.DodgerBlue);
             paredeTextura(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0, texParede); //fazerParede(270, altura, -distRecepTV - tamMaiorTV, -tamProd, 800, 0); //superior sul sala producao
+            paredeTextura(270, altura, -distRecepTV - tamMaiorTV + 100, -200, 800 + 385, 0, texParede);
+
 
             GL.Color3(Color.LightSteelBlue);
             paredeTextura(0, altura, -distRecepTV - tamMaiorTV, 0, 800, 385, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV, 0, 800, 385);//parede interior curta
@@ -296,10 +291,11 @@ namespace Biblioteca
             GL.Color3(Color.Gray);
             paredeTextura(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV, texParede);//fazerParede(0, altura, -distRecepTV, -tamMaiorTV, 800 + tamMenorTV); //parede norte tv
             paredeTextura(0, altura, -distRecepTV - tamMaiorTV - 100, -tamProd + 100, 800 + tamMenorTV, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, -tamProd + 100, 800 + tamMenorTV);
-            paredeTextura(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -165, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -165);
-            paredeTextura(0, altura, -distRecepTV - tamMaiorTV - 100, 0, 800 + tamMenorTV, -165, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, 0, 800 + tamMenorTV, -165);
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -205, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV + 100, 0, 800 + tamMenorTV, -165);
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV - 100, 0, 800 + tamMenorTV, -205, texParede); //fazerParede(0, altura, -distRecepTV - tamMaiorTV - 100, 0, 800 + tamMenorTV, -165);
+            paredeTextura(270, altura, -distRecepTV - tamMaiorTV, -200, 800 + tamMenorTV, 0, texParede);
 
-                        //TETO TV-MENOR
+            //TETO TV-MENOR
             GL.Color3(Color.White);
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texParede);
@@ -309,8 +305,8 @@ namespace Biblioteca
             GL.TexCoord2(5, 0); GL.Vertex3(-1125, 1390, altura);
             GL.TexCoord2(5, 5); GL.Vertex3(-1125, 1940, altura);
             GL.End();
-            
-                        //PORTA TV-MENOR
+
+            //PORTA TV-MENOR
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPorta);
             GL.Color3(Color.White);
@@ -321,7 +317,7 @@ namespace Biblioteca
             GL.TexCoord2(1, 0); GL.Vertex3(-1550, 1510, portAltura + 60);
             GL.End();
             GL.Disable(EnableCap.Blend);
-                        //PORTA TV-MAIOR
+            //PORTA TV-MAIOR
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPorta);
             GL.Color3(Color.White);
@@ -332,7 +328,7 @@ namespace Biblioteca
             GL.TexCoord2(1, 0); GL.Vertex3(-1550 - 120, 1390, portAltura + 60); //porta menor devido a parede ta mt grande
             GL.End();
             GL.Disable(EnableCap.Blend);
-                        //PORTA ENTRADA
+            //PORTA ENTRADA
             GL.Enable(EnableCap.Texture2D);
             GL.BindTexture(TextureTarget.Texture2D, texPorta);
             GL.Color3(Color.White);
@@ -355,13 +351,20 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Blend);
 
+
             GL.Color3(Color.BlueViolet);
             paredeTextura(0, altura, -distRecepTV - 575, -425, 800 + tamMenorTV + 120, texParede); //fazerParede(0, altura, -distRecepTV - 575, -425, 800 + tamMenorTV + 120);
+            paredeTextura(270, altura, -distRecepTV - 575, 0, 800 + tamMenorTV, 120, texParede);
+            paredeTextura(0, altura, -distRecepTV - 575 - 270, 0, 800 + tamMenorTV + 240, 550 - 240, texParede);
+            paredeTextura(0, altura, -distRecepTV - 575 - 270, -160, 800 + tamMenorTV + 240, 0, texParede);
+            paredeTextura(270, altura, -distRecepTV - 575 - 270 - 160, -120, 800 + tamMenorTV + 240, 0, texParede);
+            paredeTextura(270, altura, -distRecepTV - 575 - 425, -125, 800 + tamMenorTV + 120, 0, texParede);
             paredeTextura(0, altura, -distRecepTV - tamMaiorTV, -275, 800 + tamMenorTV + 120, texParede);// fazerParede(0, altura, -distRecepTV - tamMaiorTV, -275, 800 + tamMenorTV + 120);
             paredeTextura(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800 + tamMenorTV, 550, texParede);// fazerParede(0, altura, -distRecepTV - tamMaiorTV - tamProd, 0, 800+tamMenorTV,550);
-
+            paredeTextura(0, altura, -distRecepTV - tamMaiorTV - 275, 0, 800 + tamMenorTV + 240, 550 - 240, texParede);
+            paredeTextura(270, altura, -distRecepTV - tamMaiorTV - 275, 0, 800 + tamMenorTV + 120, 120, texParede);
             paredeTextura(0, altura, -distRecepTV - 575, 0, 800 + tamMenorTV + 120, 550 - 120, texParede);//fazerParede(0, altura, -distRecepTV - 575, 0, 800 + tamMenorTV + 120, 550 - 120);
-            paredeTextura(0, altura, -distRecepTV - 575, -550, 800 + tamMenorTV + 550,texParede);// fazerParede(0, altura, -distRecepTV - 575, -550, 800 + tamMenorTV + 550);
+            paredeTextura(0, altura, -distRecepTV - 575, -550, 800 + tamMenorTV + 550, texParede);// fazerParede(0, altura, -distRecepTV - 575, -550, 800 + tamMenorTV + 550);
 
             paredeTextura(0, altura, -distRecepTV - 575 - 550, 0, 800 + tamMenorTV + 550, -550 + 120, texParede);// fazerParede(0, altura, -distRecepTV - 575 - 550, 0, 800 + tamMenorTV + 550, -550 + 120);
 
@@ -369,7 +372,6 @@ namespace Biblioteca
 
 
         }
-
         public void fazerFotografia(int texParede, int texPiso, int textPortaFoto)
         {
             GL.Color3(Color.White);
@@ -408,7 +410,7 @@ namespace Biblioteca
 
             chaoTextura(altura, altura, 550, comprimentoEstudioFotografia + 400, 1880, 1100, texParede);
 
-            GL.Color3(Color.Red);
+            GL.Color3(Color.DarkRed);
             fazerParede(0, altura, 950, comprimentoEstudioFotografia, 2945);
             fazerChao(0, 0, 950, comprimentoEstudioFotografia, 2445, 500);
         }
@@ -431,7 +433,7 @@ namespace Biblioteca
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
-            GL.Color3(Color.Red);
+            GL.Color3(Color.White);
             chaoTextura(altura, altura, 0, recepLarg, 0, recepCompr, texParede);
 
 
@@ -686,6 +688,19 @@ namespace Biblioteca
 
 
         }
+        public void fazerEstrutTransp() //objetos transparentes - tem que vir por ultimo
+        {
+            //porta da recepção
+            
+            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
+            GL.Enable(EnableCap.Blend);
+            GL.Color4(0.5f, 0.5f, 0.5f, 0.7f);
+            fazerParede(270, 400, 0, 0, 801, 445);
 
+            fazerParede(0, 270, 0, 0, 801, 80);
+
+            fazerParede(0, 270, 0, 0, 1246 - 80, 80); //1436 = buracoYf
+            GL.Disable(EnableCap.Blend);
+        }
     }
 }

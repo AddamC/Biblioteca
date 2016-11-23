@@ -120,8 +120,7 @@ namespace Biblioteca
             estrutura.FazerChaoComodos(texGrama, texPiso, texPav, texParede);
             estrutura.fazerRecep2(texParede, texPiso ,texPortaFoto);
             estrutura.fazerSala1(texParede, texPiso, texPortaFoto);
-
-            //batatasadasd
+            estrutura.fazerEstrutTransp();
 
             GL.Color3(Color.BlueViolet);
             //construcao.paredeBuraco(0, 300, 0, 300, 0, 0,
