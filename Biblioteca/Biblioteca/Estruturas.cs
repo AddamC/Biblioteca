@@ -51,7 +51,7 @@ namespace Biblioteca
 
 
 
-        public void fazerEntrada()
+        public void fazerEntrada(int texPiso)
         {
             GL.Color3(Color.DimGray);
             fazerParede(0, altura/5, -850, 850, 534);
@@ -75,9 +75,9 @@ namespace Biblioteca
 
 
 
-            GL.Color3(Color.Red);
+            GL.Color3(Color.Transparent);
             
-            fazerChao(0, 0, -850, 850, 534, 266 );
+            chaoTextura(0, 0, -850, 850, 534, 266, texPiso );
 
             //GL.Color3(Color.Green);
             //fazerChao(0, 0, -1000, 1000, -100, 635);
@@ -426,10 +426,10 @@ namespace Biblioteca
             GL.BindTexture(TextureTarget.Texture2D, texPiso);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(2230, 1680, 0);
+            GL.TexCoord2(4f, 0 / 568); GL.Vertex3(2230, 1680, 0);
             GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(0, 1680, 0);
-            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(0, 0, 0);
-            GL.TexCoord2(1f, 1f); GL.Vertex3(2230, 0, 0);
+            GL.TexCoord2(0 / 984, 4f); GL.Vertex3(0, 0, 0);
+            GL.TexCoord2(4f, 4f); GL.Vertex3(2230, 0, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 
@@ -456,10 +456,10 @@ namespace Biblioteca
             GL.BindTexture(TextureTarget.Texture2D, texPiso);
             GL.Color3(Color.Transparent);
             GL.Begin(PrimitiveType.Quads);
-            GL.TexCoord2(1f, 0 / 568); GL.Vertex3(4110, 1680, 0);
+            GL.TexCoord2(4f, 0 / 568); GL.Vertex3(4110, 1680, 0);
             GL.TexCoord2(0 / 984, 0 / 568); GL.Vertex3(2430, 1680, 0);
-            GL.TexCoord2(0 / 984, 1f); GL.Vertex3(2430, 0, 0);
-            GL.TexCoord2(1f, 1f); GL.Vertex3(4110, 0, 0);
+            GL.TexCoord2(0 / 984, 4f); GL.Vertex3(2430, 0, 0);
+            GL.TexCoord2(4f, 4f); GL.Vertex3(4110, 0, 0);
             GL.End();
             GL.Disable(EnableCap.Texture2D);
 

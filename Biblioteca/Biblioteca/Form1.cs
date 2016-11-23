@@ -1,4 +1,12 @@
-﻿using System;
+﻿//Programa de computação gráfica da FEMA feito por:
+// Addam Cauê
+// Pedro Foganholi
+// Pedro Sola
+// Sílvio Marcelino
+// José de Jesus
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -111,7 +119,7 @@ namespace Biblioteca
             //GL.TexCoord2(463f / 819f, 412f / 460f); GL.Vertex3(100, 0, 60);
             //GL.End();
 
-            estrutura.fazerEntrada();
+            estrutura.fazerEntrada(texPiso);
             estrutura.fazerAuditorio(texParede, texPortaFoto);
             estrutura.fazerRecepcao(texParede);
             estrutura.fazerFotografia(texParede, texChaoFoto, texPortaFoto);
